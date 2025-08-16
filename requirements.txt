@@ -1,0 +1,6 @@
+matplotlib>=3.5.0
+cartopy>=0.20.0
+geopandas>=0.10.0
+requests>=2.25.0
+notebook>=6.4.0
+jupyterlab>=3.0.0
