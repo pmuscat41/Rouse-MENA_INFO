@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Global Memo Dashboard</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <style>
+        /* --- LAYOUT & COSMETICS --- */
+        body { font-family: 'Roboto', sans-serif; background-color: #f4f7f9; color: #333; margin: 0; padding: 20px; }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        h1 { color: #1a73e8; border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 20px; }
+
+        /* --- TABS --- */
+        .tabs { display: flex; list-style: none; padding: 0; margin-bottom: 20px; border-bottom: 2px solid #1a73e8; }
+        .tab-link {
+            padding: 12px 25px; cursor: pointer; background: #f0f0f0; margin-right: 4px;
+            border-top-left-radius: 6px; border-top-right-radius: 6px; font-weight: 500;
+        }
+        .tab-link.active { background: #1a73e8; color: white; }
+
+        /* --- DASHBOARD GRID (Map Left, Data Right) --- */
+        .dashboard-grid { display: flex; gap: 20px; }
+        
+        /* Map is approx half size (55%) */
+        #map-wrapper { flex: 0 0 55%; height: 500px; position: relative; border-radius: 8px; overflow: hidden; border: 1px solid #ddd; }
+        #map { width: 100%; height: 100%; }
+
+        /* Data Panel (45%) */
+        #data-panel {
+            flex: 1;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            overflow-y: auto;
+            height: 460px; /* Matches map height minus padding */
+        }
+
+        /* --- DATA TYPOGRAPHY --- */
+        .country-title { color: #1a73e8; margin-top: 0; font-size: 24px; }
+        .stat-row { display: flex; justify-content: space-between; border-bottom: 1px solid #ddd; padding: 10px 0; }
+        .stat-label { font-weight: bold; color: #555; }
+        .stat-value { font-weight: 400; color: #000; }
+        
+        .section-header { margin-top: 20px; font-size: 16px; font-weight: bold; color: #333; text-transform: uppercase; letter-spacing: 0.5px; }
+        .req-box { background: #fff; padding: 15px; border-left: 4px solid #d93025; margin-top: 10px; font-size: 14px; line-height: 1.5; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+
+        .hidden { display: none; }
+        .instruction-text { color: #777; text-align: center; margin-top: 150px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🌎 Global Filing & Statistics Dashboard</h1>
+
+    <ul class="tabs">
+        <li class="tab-link active" onclick="switchRegion('global', this)">Global View</li>
+        <li class="tab-link" onclick="switchRegion('africa', this)">Africa</li>
+        <li class="tab-link" onclick="switchRegion('mideast', this)">Middle East</li>
+    </ul>
+
+    <div class="dashboard-grid">
+        <div id="map-wrapper">
+            <div id="map"></div>
+        </div>
+
+        <div id="data-panel">
+            <div id="empty-state" class="instruction-text">
+                <h3>Select a Country</h3>
+                <p>Click a pin on the map to view Population, Stats, and Filing Requirements.</p>
+            </div>
+            
+            <div id="content-state" class="hidden">
+                <h2 class="country-title" id="d-name">Country Name</h2>
+                
+                <div class="stat-row">
+                    <span class="stat-label">Population:</span>
+                    <span class="stat-value" id="d-pop">--</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">GDP:</span>
+                    <span class="stat-value" id="d-gdp">--</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Status:</span>
+                    <span class="stat-value" id="d-status">--</span>
+                </div>
+
+                <div class="section-header">📂 Filing Documentary Requirements</div>
+                <div class="req-box" id="d-reqs">
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    // --- 1. YOUR DATABASE ---
+    // EDIT THIS SECTION to add your real data.
+    const database = [
+        {
+            id: "ae",
+            name: "United Arab Emirates",
+            region: "mideast",
+            coords: [23.4241, 53.8478],
+            population: "10,876,981 (2024)",
+            gdp: "—",
+            status: "90-day window; notarized docs",
+            requirements: "1. Power of Attorney: Yes — 90 days; notarized original (legalization generally not required).<br>2. Assignment: Yes — 90 days; notarized original.<br>3. Trade licence/Commercial register: Yes — 90 days; notarized + may need UAE consular legalization.<br>4. Priority document (if claimed): Typically by invitation (often 2–3 months); certified copy, translation if requested."
+        },
+        {
+            id: "sa",
+            name: "Saudi Arabia",
+            region: "mideast",
+            coords: [23.8859, 45.0792],
+            population: "~33.9 million (2024 est.)",
+            gdp: "—",
+            status: "Legalization required",
+            requirements: "1. Power of Attorney: Yes — up to 3 months; legalized or apostilled.<br>2. Assignment: Yes — up to 3 months; legalized or apostilled.<br>3. Commercial/Certificate of Incorporation: Often required with formalities; certified/legalized.<br>4. Priority document (if claimed): 60–90 days from filing; certified copy, translation generally not required unless asked."
+        },
+        {
+            id: "om",
+            name: "Oman",
+            region: "mideast",
+            coords: [21.4735, 55.9754],
+            population: "5,049,269 (2023)",
+            gdp: "—",
+            status: "Strict legalization timelines",
+            requirements: "1. Power of Attorney: Yes — 60 days; legalized to Omani Consulate or apostilled.<br>2. Assignment: Yes — ≤90 days (practice); legalized.<br>3. Certificate of Incorporation (corporate): Yes — ≤90 days; legalized.<br>4. Priority document (if claimed): 3 months; certified copy with Arabic translation per practice."
+        },
+        {
+            id: "qa",
+            name: "Qatar",
+            region: "mideast",
+            coords: [25.3548, 51.1839],
+            population: "2,979,082 (2023)",
+            gdp: "—",
+            status: "Consular legalization required",
+            requirements: "1. Power of Attorney: Yes — within 3–6 months (varies); legalized to Qatari Consulate (not Apostille).<br>2. Assignment: If applicable; by invitation; legalized.<br>3. Commercial/Certificate of Incorporation: Sometimes; with formalities; legalized.<br>4. Priority document (if claimed): Up to 6 months per practice; certified copy, translation typically not required."
+        },
+        {
+            id: "bh",
+            name: "Bahrain",
+            region: "mideast",
+            coords: [26.0667, 50.5577],
+            population: "1,588,670 (2024)",
+            gdp: "—",
+            status: "Apostille or consular options",
+            requirements: "1. Power of Attorney: Yes — 3 months; apostille or consular legalization.<br>2. Assignment: Yes — 3 months; apostille or consular legalization.<br>3. Corporate proof (if corporate): With formalities; certified/legalized.<br>4. Priority document (if claimed): 3 months; certified copy (translation if required)."
+        },
+        {
+            id: "kw",
+            name: "Kuwait",
+            region: "mideast",
+            coords: [29.3759, 47.9774],
+            population: "4,973,861 (2024)",
+            gdp: "—",
+            status: "Consular legalization within 90 days",
+            requirements: "1. Power of Attorney: Yes — 90 days; legalized via Kuwaiti Consulate (copy at filing; original later).<br>2. Assignment: Yes — 90 days; legalized.<br>3. Commercial Register Extract: Yes (corporate) — 90 days; legalized.<br>4. Priority document (if claimed): By invitation (~90 days); certified, Arabic translation if requested."
+        },
+        {
+            id: "eg",
+            name: "Egypt",
+            region: "africa",
+            coords: [26.8206, 30.8025],
+            population: "116,538,258 (2024)",
+            gdp: "—",
+            status: "Consular legalization common",
+            requirements: "1. Power of Attorney: Yes — commonly within 4 months; consular legalization (Egyptian Consulate).<br>2. Assignment: Yes — ~4 months; consular legalization.<br>3. Certificate of Incorporation (corporate): Yes; consular legalization + Arabic translation.<br>4. Priority document (if claimed): By invitation (typically 2–3 months); certified, translation if required."
+        },
+        {
+            id: "za",
+            name: "South Africa",
+            region: "africa",
+            coords: [-30.5595, 22.9375],
+            population: "~63.1 million (2024 mid-year est.)",
+            gdp: "—",
+            status: "Formalities-light",
+            requirements: "1. Power of Attorney: Yes — by request/office period; simply signed (no notarization/legalization).<br>2. Assignment: Yes — pre-acceptance; simple, not typically legalized.<br>3. Commercial/Corporate docs: No (routine).<br>4. Priority document (if claimed): Within 6 months of SA filing (extendable); certified copy, translation if not in an official language."
+        },
+        {
+            id: "ng",
+            name: "Nigeria",
+            region: "africa",
+            coords: [9.082, 8.6753],
+            population: "232,679,478 (2024)",
+            gdp: "—",
+            status: "Simple signatures accepted",
+            requirements: "1. Power of Attorney: Yes — at/soon after filing; simply signed (no notarization).<br>2. Assignment: Yes — prompt; simple (no legalization).<br>3. Commercial/Corporate docs: Sometimes, if requested; simple copy.<br>4. Priority document (if claimed): With/shortly after filing; certified copy."
+        },
+        {
+            id: "ke",
+            name: "Kenya",
+            region: "africa",
+            coords: [-0.0236, 37.9062],
+            population: "56,432,944 (2024)",
+            gdp: "—",
+            status: "Simply signed PoA",
+            requirements: "1. Power of Attorney: Yes (if foreign applicant uses agent) — at/after filing; simply signed.<br>2. Assignment: Yes — before grant/recordal; simple, not typically legalized.<br>3. Commercial/Corporate docs: No (routine).<br>4. Priority document (if claimed): Upon request; certified copy."
+        },
+        {
+            id: "ap",
+            name: "ARIPO (AP) Regional",
+            region: "africa",
+            coords: [-11.2027, 17.8739],
+            population: "Regional system (21 member states)",
+            gdp: "—",
+            status: "PoA within 2 months for non-residents",
+            requirements: "1. Power of Attorney (Form 4): Yes if applicant not resident — if not at entry, within 2 months after national/regional-phase time limit; simply signed.<br>2. Assignment: Sometimes; by invitation; simple.<br>3. Commercial/Corporate docs: No (routine).<br>4. Priority document (if claimed): 3 months; certified copy with English translation if non-English."
+        },
+        {
+            id: "oa",
+            name: "OAPI (OA) Regional",
+            region: "africa",
+            coords: [7.3697, 12.3547],
+            population: "Regional system (17 member states)",
+            gdp: "—",
+            status: "PoA at filing",
+            requirements: "1. Power of Attorney: Yes — at filing (original may follow in short window); simple, no authentication per some practice.<br>2. Assignment: Yes — at/soon after filing; original or certified copy.<br>3. Commercial/Corporate docs: No (routine).<br>4. Priority document (if claimed): 3–6 months; certified copy with FR/EN translation if required."
+        }
+    ];
+
+    // --- 2. MAP INITIALIZATION ---
+    var map = L.map('map').setView([20, 20], 2); // Global view
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(map);
+
+    // --- 3. ADD PINS TO MAP ---
+    database.forEach(data => {
+        var marker = L.marker(data.coords).addTo(map);
+        
+        // Add click event to marker
+        marker.on('click', function() {
+            // Populate the Data Panel
+            document.getElementById('empty-state').classList.add('hidden');
+            document.getElementById('content-state').classList.remove('hidden');
+            
+            document.getElementById('d-name').innerText = data.name;
+            document.getElementById('d-pop').innerText = data.population;
+            document.getElementById('d-gdp').innerText = data.gdp;
+            document.getElementById('d-status').innerText = data.status;
+            document.getElementById('d-reqs').innerHTML = data.requirements;
+        });
+    });
+
+    // --- 4. TAB LOGIC ---
+    function switchRegion(region, tab) {
+        // Update Tabs
+        document.querySelectorAll('.tab-link').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // Move Map
+        if(region === 'global') map.flyTo([20, 20], 2);
+        if(region === 'africa') map.flyTo([1.5, 18], 3.5);
+        if(region === 'mideast') map.flyTo([24, 45], 5);
+    }
+</script>
+
+</body>
+</html>
