@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Global Memo Dashboard</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <style>
+        /* --- LAYOUT & COSMETICS --- */
+        body { font-family: 'Roboto', sans-serif; background-color: #f4f7f9; color: #333; margin: 0; padding: 20px; }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        h1 { color: #1a73e8; border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 20px; }
+
+        /* --- TABS --- */
+        .tabs { display: flex; list-style: none; padding: 0; margin-bottom: 20px; border-bottom: 2px solid #1a73e8; }
+        .tab-link {
+            padding: 12px 25px; cursor: pointer; background: #f0f0f0; margin-right: 4px;
+            border-top-left-radius: 6px; border-top-right-radius: 6px; font-weight: 500;
+        }
+        .tab-link.active { background: #1a73e8; color: white; }
+
+        /* --- DASHBOARD GRID (Map Left, Data Right) --- */
+        .dashboard-grid { display: flex; gap: 20px; }
+        
+        /* Map is approx half size (55%) */
+        #map-wrapper { flex: 0 0 55%; height: 500px; position: relative; border-radius: 8px; overflow: hidden; border: 1px solid #ddd; }
+        #map { width: 100%; height: 100%; }
+
+        /* Data Panel (45%) */
+        #data-panel {
+            flex: 1;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            overflow-y: auto;
+            height: 460px; /* Matches map height minus padding */
+        }
+
+        /* --- DATA TYPOGRAPHY --- */
+        .country-title { color: #1a73e8; margin-top: 0; font-size: 24px; }
+        .stat-row { display: flex; justify-content: space-between; border-bottom: 1px solid #ddd; padding: 10px 0; }
+        .stat-label { font-weight: bold; color: #555; }
+        .stat-value { font-weight: 400; color: #000; }
+        
+        .section-header { margin-top: 20px; font-size: 16px; font-weight: bold; color: #333; text-transform: uppercase; letter-spacing: 0.5px; }
+        .req-box { background: #fff; padding: 15px; border-left: 4px solid #d93025; margin-top: 10px; font-size: 14px; line-height: 1.5; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+
+        .hidden { display: none; }
+        .instruction-text { color: #777; text-align: center; margin-top: 150px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🌎 Global Filing & Statistics Dashboard</h1>
+
+    <ul class="tabs">
+        <li class="tab-link active" onclick="switchRegion('global', this)">Global View</li>
+        <li class="tab-link" onclick="switchRegion('africa', this)">Africa</li>
+        <li class="tab-link" onclick="switchRegion('mideast', this)">Middle East</li>
+    </ul>
+
+    <div class="dashboard-grid">
+        <div id="map-wrapper">
+            <div id="map"></div>
+        </div>
+
+        <div id="data-panel">
+            <div id="empty-state" class="instruction-text">
+                <h3>Select a Country</h3>
+                <p>Click a pin on the map to view Population, Stats, and Filing Requirements.</p>
+            </div>
+            
+            <div id="content-state" class="hidden">
+                <h2 class="country-title" id="d-name">Country Name</h2>
+                
+                <div class="stat-row">
+                    <span class="stat-label">Population:</span>
+                    <span class="stat-value" id="d-pop">--</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">GDP:</span>
+                    <span class="stat-value" id="d-gdp">--</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Status:</span>
+                    <span class="stat-value" id="d-status">--</span>
+                </div>
+
+                <div class="section-header">📂 Filing Documentary Requirements</div>
+                <div class="req-box" id="d-reqs">
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    // --- 1. YOUR DATABASE ---
+    // EDIT THIS SECTION to add your real data.
+    const database = [
+        {
+            id: "ng",
+            name: "Nigeria",
+            region: "africa",
+            coords: [9.0820, 8.6753],
+            population: "218.5 Million",
+            gdp: "$440 Billion",
+            status: "Active Market",
+            requirements: "1. Certificate of Incorporation (Certified True Copy).<br>2. Tax Clearance Certificate (last 3 years).<br>3. Form CAC 1.1 (Application for Registration).<br>4. Memorandum and Articles of Association."
+        },
+        {
+            id: "eg",
+            name: "Egypt",
+            region: "africa",
+            coords: [26.8206, 30.8025],
+            population: "104 Million",
+            gdp: "$404 Billion",
+            status: "High Priority",
+            requirements: "1. Commercial Registry extract (recent).<br>2. Tax Card.<br>3. Value Added Tax (VAT) registration certificate.<br>4. Financial statements audited by a local accountant."
+        },
+        {
+            id: "sa",
+            name: "Saudi Arabia",
+            region: "mideast",
+            coords: [23.8859, 45.0792],
+            population: "35.3 Million",
+            gdp: "$833 Billion",
+            status: "Strategic Partner",
+            requirements: "1. MISA License (Foreign Investment License).<br>2. Commercial Registration (CR).<br>3. Articles of Association notarized by MoC.<br>4. Wasel Address Registration."
+        },
+        {
+            id: "ae",
+            name: "United Arab Emirates",
+            region: "mideast",
+            coords: [23.4241, 53.8478],
+            population: "9.9 Million",
+            gdp: "$415 Billion",
+            status: "Regional Hub",
+            requirements: "1. Trade Name Reservation Certificate.<br>2. Initial Approval Certificate.<br>3. Lease Agreement (Ejari).<br>4. MOA signed before the notary public."
+        }
+    ];
+
+    // --- 2. MAP INITIALIZATION ---
+    var map = L.map('map').setView([20, 20], 2); // Global view
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(map);
+
+    // --- 3. ADD PINS TO MAP ---
+    database.forEach(data => {
+        var marker = L.marker(data.coords).addTo(map);
+        
+        // Add click event to marker
+        marker.on('click', function() {
+            // Populate the Data Panel
+            document.getElementById('empty-state').classList.add('hidden');
+            document.getElementById('content-state').classList.remove('hidden');
+            
+            document.getElementById('d-name').innerText = data.name;
+            document.getElementById('d-pop').innerText = data.population;
+            document.getElementById('d-gdp').innerText = data.gdp;
+            document.getElementById('d-status').innerText = data.status;
+            document.getElementById('d-reqs').innerHTML = data.requirements;
+        });
+    });
+
+    // --- 4. TAB LOGIC ---
+    function switchRegion(region, tab) {
+        // Update Tabs
+        document.querySelectorAll('.tab-link').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // Move Map
+        if(region === 'global') map.flyTo([20, 20], 2);
+        if(region === 'africa') map.flyTo([1.5, 18], 3.5);
+        if(region === 'mideast') map.flyTo([24, 45], 5);
+    }
+</script>
+
+</body>
+</html>
