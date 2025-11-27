@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rouse MENA & Africa – Patent & Design Formalities</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0b2239;
+      --navy: #143c6b;
+      --sky: #2e8bc0;
+      --sand: #f2f0ec;
+      --gold: #f4a300;
+      --card: #ffffff;
+      --border: rgba(12, 46, 73, 0.08);
+      --muted: #5c6c80;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at 10% 20%, rgba(46,139,192,0.10), transparent 35%),
+                  radial-gradient(circle at 90% 20%, rgba(244,163,0,0.08), transparent 30%),
+                  var(--sand);
+      color: var(--ink);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 28px 10vw 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      background: linear-gradient(90deg, rgba(11,34,57,0.92), rgba(20,60,107,0.92));
+      color: #fff;
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.2rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .pill {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .hero {
+      padding: 80px 10vw 48px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-text h2 {
+      margin: 0 0 12px;
+      font-size: 2.2rem;
+      color: var(--ink);
+    }
+
+    .hero-text p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      max-width: 640px;
+    }
+
+    .badge-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(11,34,57,0.08);
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(20,60,107,0.95), rgba(11,34,57,0.92));
+      color: #fff;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 18px 40px rgba(11,34,57,0.18);
+    }
+
+    .panel h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .panel ul {
+      padding-left: 18px;
+      margin: 0;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .filters {
+      padding: 0 10vw 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .filters h3 {
+      margin: 0;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .segmented {
+      display: flex;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 6px;
+      box-shadow: 0 10px 24px rgba(11,34,57,0.08);
+      gap: 6px;
+    }
+
+    .filter-button {
+      border: none;
+      border-radius: 12px;
+      padding: 10px 14px;
+      background: transparent;
+      color: var(--navy);
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      letter-spacing: 0.01em;
+    }
+
+    .filter-button:hover {
+      background: rgba(46,139,192,0.1);
+    }
+
+    .filter-button.active {
+      background: linear-gradient(120deg, rgba(20,60,107,0.16), rgba(46,139,192,0.18));
+      color: var(--ink);
+      box-shadow: 0 10px 20px rgba(11,34,57,0.12) inset;
+    }
+
+    .grid {
+      padding: 10px 10vw 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 22px;
+      display: grid;
+      gap: 16px;
+      box-shadow: 0 12px 40px rgba(11,34,57,0.08);
+      transition: transform 0.18s ease, opacity 0.18s ease;
+    }
+
+    .card.hide {
+      display: none;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .card-title {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .population {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .flag {
+      width: 72px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #f8f9fb;
+      padding: 4px;
+    }
+
+    .pill-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-weight: 700;
+      background: rgba(46,139,192,0.08);
+      color: var(--navy);
+      border: 1px solid rgba(46,139,192,0.15);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    thead {
+      background: linear-gradient(90deg, rgba(20,60,107,0.12), rgba(46,139,192,0.12));
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    tbody tr:nth-child(every) {}
+
+    tbody tr:nth-child(odd) { background: #f9fbfd; }
+    tbody tr:nth-child(even) { background: #ffffff; }
+
+    .notes {
+      margin: 0;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: rgba(244,163,0,0.08);
+      color: var(--ink);
+      border: 1px solid rgba(244,163,0,0.2);
+      font-weight: 600;
+    }
+
+    footer {
+      padding: 24px 10vw 36px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 700px) {
+      header { padding: 18px 7vw; }
+      .hero { padding: 60px 7vw 36px; }
+      .grid { padding: 10px 7vw 60px; }
+      .card-header { align-items: flex-start; }
+      .flag { width: 56px; height: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rouse – Patent & Design Formalities</h1>
+    <div class="pill">MENA & Africa hub</div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Fast-reference documentary requirements</h2>
+      <p>Concise, presentation-ready guide for filing patents and designs across MENA and key African jurisdictions. Built for a modern, corporate audience and aligned with the Rouse brand cues.</p>
+      <div class="badge-row">
+        <span class="badge">Consular & apostille signals surfaced</span>
+        <span class="badge">Priority document timing</span>
+        <span class="badge">Agent appointment clarity</span>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Using this sheet</h3>
+      <ul>
+        <li><strong>Bold</strong> values highlight hard deadlines or execution levels.</li>
+        <li>Flags pull live from the hosted repo so the visuals stay on brand.</li>
+        <li>Notes distill the nuance from PCT national chapters and practitioner practice.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="filters" aria-label="Region filter tabs">
+    <h3>Explore by region</h3>
+    <div class="segmented" role="tablist" aria-label="Region tabs">
+      <button type="button" class="filter-button active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button type="button" class="filter-button" data-filter="mena" role="tab" aria-selected="false">Middle East</button>
+      <button type="button" class="filter-button" data-filter="africa" role="tab" aria-selected="false">Africa</button>
+    </div>
+  </section>
+
+  <section class="grid">
+    <article class="card" id="uae" data-region="mena">
+      <div class="card-header">
+        <div>
+          <p class="pill-cta">Gulf · High formalities</p>
+          <h3 class="card-title">United Arab Emirates — Patents & Designs</h3>
+          <div class="population">Population (2024): 10,876,981</div>
+        </div>
+        <img class="flag" src="https://raw.githubusercontent.com/pmuscat41/Rouse-MENA_INFO/main/MENA/UAE.png" alt="UAE flag" />
+      </div>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Required?</th><th>Deadline</th><th>Execution / Form</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Power of Attorney</td><td><strong>Yes</strong></td><td><strong>90 days</strong> (non-extendable practice)</td><td><strong>Notarized original</strong>; legalization generally <strong>not</strong> required</td></tr>
+          <tr><td>Assignment (if applicant ≠ inventor)</td><td><strong>Yes</strong></td><td><strong>90 days</strong></td><td><strong>Notarized</strong> original (UAE public-entity stamp often acceptable)</td></tr>
+          <tr><td>Commercial/Trade Licence or Register Extract</td><td><strong>Yes</strong></td><td><strong>90 days</strong></td><td><strong>Notarized + Legalized</strong> to UAE Consulate (per practice)</td></tr>
+          <tr><td>Priority Document (if Paris)</td><td><strong>If claimed</strong></td><td><strong>By invitation</strong> (often 2–3 months)</td><td>Certified copy; translation only if requested</td></tr>
+        </tbody>
+      </table>
+      <p class="notes">MoE allows mandatory docs within <strong>90 days</strong>; legalization expectations vary mainly for corporate papers.</p>
+    </article>
+
+    <article class="card" id="saudi" data-region="mena">
+      <div class="card-header">
+        <div>
+          <p class="pill-cta">Gulf · Apostille accepted</p>
+          <h3 class="card-title">Saudi Arabia — Patents & Designs</h3>
+          <div class="population">Population (2024 est.): ~33.9 million</div>
+        </div>
+        <img class="flag" src="https://raw.githubusercontent.com/pmuscat41/Rouse-MENA_INFO/main/MENA/Saudi.png" alt="Saudi Arabia flag" />
+      </div>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Required?</th><th>Deadline</th><th>Execution / Form</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Power of Attorney</td><td><strong>Yes</strong></td><td>Up to <strong>3 months</strong> (invitation/practice)</td><td><strong>Legalized or Apostilled</strong></td></tr>
+          <tr><td>Assignment (if applicant ≠ inventor)</td><td><strong>Yes</strong></td><td><strong>Up to 3 months</strong></td><td><strong>Legalized or Apostilled</strong></td></tr>
+          <tr><td>Commercial/Certificate of Incorporation</td><td><strong>Often required</strong></td><td>With formalities</td><td><strong>Certified/Legalized</strong> (practice varies)</td></tr>
+          <tr><td>Priority Document (if Paris)</td><td><strong>If claimed</strong></td><td><strong>60–90 days</strong> from filing (practice)</td><td>Certified copy; translation generally <strong>not</strong> required unless asked</td></tr>
+        </tbody>
+      </table>
+      <p class="notes">SAIP invitations typically grant <strong>3 months</strong>; apostille recognised.</p>
+    </article>
+
+    <article class="card" id="oman" data-region="mena">
+      <div class="card-header">
+        <div>
+          <p class="pill-cta">Gulf · Consular/Apostille</p>
+          <h3 class="card-title">Oman — Patents & Designs</h3>
+          <div class="population">Population (2023): 5,049,269</div>
+        </div>
+        <img class="flag" src="https://raw.githubusercontent.com/pmuscat41/Rouse-MENA_INFO/main/MENA/Oman.png" alt="Oman flag" />
+      </div>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Required?</th><th>Deadline</th><th>Execution / Form</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Power of Attorney</td><td><strong>Yes</strong></td><td><strong>60 days</strong></td><td><strong>Legalized to Omani Consulate</strong> or <strong>Apostille</strong></td></tr>
+          <tr><td>Assignment (if applicant ≠ inventor)</td><td><strong>Yes</strong></td><td><strong>≤90 days</strong> (practice)</td><td><strong>Legalized</strong> (Consulate or Apostille)</td></tr>
+          <tr><td>Commercial/Certificate of Incorporation</td><td><strong>Yes</strong></td><td><strong>≤90 days</strong></td><td><strong>Legalized</strong> (Consulate or Apostille)</td></tr>
+          <tr><td>Priority Document (if Paris)</td><td><strong>If claimed</strong></td><td><strong>3 months</strong></td><td>Certified copy (Arabic translation per practice)</td></tr>
+        </tbody>
+      </table>
+      <p class="notes">OM.05 states PoA must arrive within <strong>60 days</strong> or the application is void; legalization or apostille accepted.</p>
+    </article>
+
+    <article class="card" id="qatar" data-region="mena">
+      <div class="card-header">
+        <div>
+          <p class="pill-cta">Gulf · Consular</p>
+          <h3 class="card-title">Qatar — Patents & Designs</h3>
+          <div class="population">Population (2023): 2,979,082</div>
+        </div>
+        <img class="flag" src="https://raw.githubusercontent.com/pmuscat41/Rouse-MENA_INFO/main/MENA/Qatar.png" alt="Qatar flag" />
+      </div>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Required?</th><th>Deadline</th><th>Execution / Form</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Power of Attorney</td><td><strong>Yes</strong></td><td><strong>3–6 months</strong> (route-dependent)</td><td><strong>Legalized to Qatari Consulate</strong> (Qatar is not Apostille)</td></tr>
+          <tr><td>Assignment (if applicant changes post-PCT)</td><td><strong>If applicable</strong></td><td>By invitation</td><td>Legalized</td></tr>
+          <tr><td>Commercial/Certificate of Incorporation</td><td><strong>Sometimes</strong></td><td>With formalities</td><td>Legalized</td></tr>
+          <tr><td>Priority Document (if Paris)</td><td><strong>If claimed</strong></td><td><strong>Up to 6 months</strong> (practice)</td><td>Certified copy; translation typically not required</td></tr>
+        </tbody>
+      </table>
+      <p class="notes">Translation may follow within six months after the standard limit; consular legalization is expected for PoA.</p>
+    </article>
+
+    <article class="card" id="bahrain" data-region="mena">
+      <div class="card-header">
+        <div>
+          <p class="pill-cta">Gulf · Apostille/Consular</p>
+          <h3 class="card-title">Bahrain — Patents & Designs</h3>
+          <div class="population">Population (2024): 1,588,670</div>
+        </div>
+        <img class="flag" src="https://raw.githubusercontent.com/pmuscat41/Rouse-MENA_INFO/main/MENA/Bahrain.png" alt="Bahrain flag" />
+      </div>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Required?</th><th>Deadline</th><th>Execution / Form</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Power of Attorney</td><td><strong>Yes</strong></td><td><strong>3 months</strong></td><td><strong>Apostille</strong> or <strong>Consular Legalization</strong></td></tr>
+          <tr><td>Assignment (if applicant ≠ inventor)</td><td><strong>Yes</strong></td><td><strong>3 months</strong></td><td><strong>Apostille</strong> or <strong>Consular Legalization</strong></td></tr>
+          <tr><td>Commercial/Corporate proof</td><td><strong>If corporate</strong></td><td>With formalities</td><td>Certified/Legalized (practice)</td></tr>
+          <tr><td>Priority Document (if Paris)</td><td><strong>If claimed</strong></td><td><strong>3 months</strong></td><td>Certified copy (+ translation if required)</td></tr>
+        </tbody>
+      </table>
+      <p class="notes">Market practice allows either apostille or consular route with a <strong>3‑month</strong> filing window.</p>
+    </article>
+
+    <article class="card" id="kuwait" data-region="mena">
+      <div class="card-header">
+        <div>
+          <p class="pill-cta">Gulf · Consular</p>
+          <h3 class="card-title">Kuwait — Patents & Designs</h3>
+          <div class="population">Population (2024): 4,973,861</div>
+        </div>
+        <img class="flag" src="https://raw.githubusercontent.com/pmuscat41/Rouse-MENA_INFO/main/MENA/Kuwait.png" alt="Kuwait flag" />
+      </div>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Required?</th><th>Deadline</th><th>Execution / Form</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Power of Attorney</td><td><strong>Yes</strong></td><td><strong>90 days</strong></td><td><strong>Legalized via Kuwaiti Consulate</strong> (copy at filing; original later)</td></tr>
+          <tr><td>Assignment (if applicant ≠ inventor)</td><td><strong>Yes</strong></td><td><strong>90 days</strong></td><td><strong>Legalized</strong> (Kuwaiti Consulate)</td></tr>
+          <tr><td>Commercial/Commercial Register Extract</td><td><strong>Yes (corporate)</strong></td><td><strong>90 days</strong></td><td><strong>Legalized</strong></td></tr>
+          <tr><td>Priority Document (if Paris)</td><td><strong>If claimed</strong></td><td>By invitation (<strong>90 days</strong>)</td><td>Certified; Arabic translation if requested</td></tr>
+        </tbody>
+      </table>
+      <p class="notes">Rule 51bis invitation commonly gives <strong>90 days</strong>; consular legalization is standard.</p>
+    </article>
+
+    <article class="card" id="egypt" data-region="africa">
+      <div class="card-header">
+        <div>
+          <p class="pill-cta">Africa · Consular</p>
+          <h3 class="card-title">Egypt — Patents & Designs</h3>
+          <div class="population">Population (2024): 116,538,258</div>
+        </div>
+        <img class="flag" src="https://raw.githubusercontent.com/pmuscat41/Rouse-MENA_INFO/main/Africa/Egypt.png" alt="Egypt flag" />
+      </div>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Required?</th><th>Deadline</th><th>Execution / Form</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Power of Attorney</td><td><strong>Yes</strong></td><td><strong>≈4 months</strong> (practice)</td><td><strong>Consular Legalization</strong> (Egyptian Consulate)</td></tr>
+          <tr><td>Assignment (if applicant ≠ inventor)</td><td><strong>Yes</strong></td><td><strong>≈4 months</strong></td><td><strong>Consular Legalization</strong></td></tr>
+          <tr><td>Commercial/Certificate of Incorporation</td><td><strong>Yes</strong></td><td>With formalities</td><td><strong>Consular Legalization</strong> + Arabic translation</td></tr>
+          <tr><td>Priority Document (if Paris)</td><td><strong>If claimed</strong></td><td>By invitation (typically 2–3 months)</td><td>Certified; Arabic translation if required</td></tr>
+        </tbody>
+      </table>
+      <p class="notes">PCT national chapter and local practice both expect consular legalization; translations frequently requested.</p>
+    </article>
+
+    <article class="card" id="south-africa" data-region="africa">
+      <div class="card-header">
+        <div>
+          <p class="pill-cta">Africa · Light formalities</p>
+          <h3 class="card-title">South Africa — Patents & Designs</h3>
+          <div class="population">Population (2024 mid-year est.): ~63.1 million</div>
+        </div>
+        <img class="flag" src="https://raw.githubusercontent.com/pmuscat41/Rouse-MENA_INFO/main/Africa/ZA.png" alt="South Africa flag" />
+      </div>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Required?</th><th>Deadline</th><th>Execution / Form</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Power of Attorney</td><td><strong>Yes</strong></td><td>By request / office-set period</td><td><strong>Simply signed</strong> (no notarization/legalization)</td></tr>
+          <tr><td>Assignment (if applicant ≠ inventor/assignee)</td><td><strong>Yes</strong></td><td>Pre-acceptance</td><td><strong>Simple</strong> (not typically legalized)</td></tr>
+          <tr><td>Commercial/Corporate docs</td><td><strong>No</strong></td><td>—</td><td>—</td></tr>
+          <tr><td>Priority Document (if Paris)</td><td><strong>If claimed</strong></td><td><strong>Within 6 months</strong> of SA filing (extendable)</td><td>Certified copy; translation if not in an official language</td></tr>
+        </tbody>
+      </table>
+      <p class="notes">South Africa remains formalities-light; simple PoA/assignments are routine and priority timing is extendable.</p>
+    </article>
+
+    <article class="card" id="nigeria" data-region="africa">
+      <div class="card-header">
+        <div>
+          <p class="pill-cta">Africa · Simple execution</p>
+          <h3 class="card-title">Nigeria — Patents & Designs</h3>
+          <div class="population">Population (2024): 232,679,478</div>
+        </div>
+        <img class="flag" src="https://raw.githubusercontent.com/pmuscat41/Rouse-MENA_INFO/main/Africa/Nigeria.png" alt="Nigeria flag" />
+      </div>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Required?</th><th>Deadline</th><th>Execution / Form</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Power of Attorney</td><td><strong>Yes</strong></td><td>At/soon after filing</td><td><strong>Simply signed</strong> (no notarization)</td></tr>
+          <tr><td>Assignment (if applicant ≠ inventor)</td><td><strong>Yes</strong></td><td>Prompt (office practice)</td><td><strong>Simple</strong> (no legalization)</td></tr>
+          <tr><td>Commercial/Corporate docs</td><td><strong>Sometimes</strong></td><td>If requested</td><td>Simple copy</td></tr>
+          <tr><td>Priority Document (if Paris)</td><td><strong>If claimed</strong></td><td>With/shortly after filing</td><td>Certified copy</td></tr>
+        </tbody>
+      </table>
+      <p class="notes">Practitioner guides indicate no notarization for PoA; originals may be invited later.</p>
+    </article>
+
+    <article class="card" id="kenya" data-region="africa">
+      <div class="card-header">
+        <div>
+          <p class="pill-cta">Africa · Agent appointment</p>
+          <h3 class="card-title">Kenya — Patents & Designs</h3>
+          <div class="population">Population (2024): 56,432,944</div>
+        </div>
+        <img class="flag" src="https://raw.githubusercontent.com/pmuscat41/Rouse-MENA_INFO/main/Africa/Kenya.png" alt="Kenya flag" />
+      </div>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Required?</th><th>Deadline</th><th>Execution / Form</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Power of Attorney</td><td><strong>Yes</strong> (if foreign applicant uses an agent)</td><td>At/after filing (office may invite)</td><td><strong>Simply signed</strong></td></tr>
+          <tr><td>Assignment (if applicant ≠ inventor)</td><td><strong>Yes</strong></td><td>Before grant/recordal</td><td><strong>Simple</strong> (not typically legalized)</td></tr>
+          <tr><td>Commercial/Corporate docs</td><td><strong>No</strong></td><td>—</td><td>—</td></tr>
+          <tr><td>Priority Document (if Paris)</td><td><strong>If claimed</strong></td><td>Upon request</td><td>Certified copy</td></tr>
+        </tbody>
+      </table>
+      <p class="notes">KIPI practice centres on agent appointment; PoA is typically just signed without notarization.</p>
+    </article>
+
+    <article class="card" id="aripo" data-region="africa">
+      <div class="card-header">
+        <div>
+          <p class="pill-cta">Regional · AP</p>
+          <h3 class="card-title">ARIPO (AP) — Patents & Designs</h3>
+          <div class="population">Regional system (21 member states)</div>
+        </div>
+        <img class="flag" src="https://raw.githubusercontent.com/pmuscat41/Rouse-MENA_INFO/main/Africa/ZA.png" alt="ARIPO icon" />
+      </div>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Required?</th><th>Deadline</th><th>Execution / Form</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Power of Attorney (Form 4)</td><td><strong>Yes</strong> (if applicant not resident in AP state)</td><td>If not at entry, <strong>within 2 months</strong> after national/regional‑phase time limit</td><td><strong>Simply signed</strong> (no legalization)</td></tr>
+          <tr><td>Assignment (if applicant ≠ inventor)</td><td><strong>Sometimes</strong></td><td>By invitation</td><td>Simple</td></tr>
+          <tr><td>Commercial/Corporate docs</td><td><strong>No</strong></td><td>—</td><td>—</td></tr>
+          <tr><td>Priority Document (if Paris)</td><td><strong>If claimed</strong></td><td><strong>3 months</strong></td><td>Certified copy (+ English translation if non-English)</td></tr>
+        </tbody>
+      </table>
+      <p class="notes">ARIPO guidance confirms a <strong>2‑month</strong> PoA window post entry and <strong>3‑month</strong> priority submission.</p>
+    </article>
+
+    <article class="card" id="oapi" data-region="africa">
+      <div class="card-header">
+        <div>
+          <p class="pill-cta">Regional · OA</p>
+          <h3 class="card-title">OAPI (OA) — Patents & Designs</h3>
+          <div class="population">Regional system (17 member states)</div>
+        </div>
+        <img class="flag" src="https://raw.githubusercontent.com/pmuscat41/Rouse-MENA_INFO/main/Africa/Nigeria.png" alt="OAPI icon" />
+      </div>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Required?</th><th>Deadline</th><th>Execution / Form</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Power of Attorney</td><td><strong>Yes</strong></td><td><strong>At filing</strong> (original may follow shortly)</td><td><strong>Simple</strong> (no authentication per some practice)</td></tr>
+          <tr><td>Assignment (if applicant ≠ inventor)</td><td><strong>Yes</strong></td><td>At/soon after filing</td><td>Original or certified copy</td></tr>
+          <tr><td>Commercial/Corporate docs</td><td><strong>No</strong></td><td>—</td><td>—</td></tr>
+          <tr><td>Priority Document (if Paris)</td><td><strong>If claimed</strong></td><td><strong>3–6 months</strong> (practice varies)</td><td>Certified copy (+ FR/EN translation if required)</td></tr>
+        </tbody>
+      </table>
+      <p class="notes">Practitioners report PoA at filing and priority documents typically within <strong>3 months</strong>; check translation needs by case.</p>
+    </article>
+  </section>
+
+  <footer>
+    Sources: World Bank/WHO population data; WIPO PCT eGuide (national chapters for KSA, OM, QA, KW, EG, KE, AP, OA); practitioner guides across referenced markets.
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.filter-button');
+    const cards = document.querySelectorAll('.card');
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        buttons.forEach((b) => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+
+        button.classList.add('active');
+        button.setAttribute('aria-selected', 'true');
+
+        const region = button.dataset.filter;
+        cards.forEach((card) => {
+          const match = region === 'all' || card.dataset.region === region;
+          card.classList.toggle('hide', !match);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
