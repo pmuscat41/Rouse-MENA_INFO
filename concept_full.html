@@ -9,57 +9,87 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     
     <style>
+        :root {
+            --ink: #0b2239;
+            --navy: #143c6b;
+            --sky: #2e8bc0;
+            --sand: #f2f0ec;
+            --gold: #f4a300;
+            --card: #ffffff;
+            --muted: #5c6c80;
+            --border: rgba(12, 46, 73, 0.12);
+        }
+
         /* --- LAYOUT & COSMETICS --- */
-        body { font-family: 'Roboto', sans-serif; background-color: #f4f7f9; color: #333; margin: 0; padding: 20px; }
-        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: radial-gradient(circle at 10% 20%, rgba(46,139,192,0.08), transparent 35%),
+                        radial-gradient(circle at 90% 20%, rgba(244,163,0,0.08), transparent 30%),
+                        var(--sand);
+            color: var(--ink);
+            margin: 0;
+            padding: 20px;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background-color: #fff;
+            background-color: var(--card);
             padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            box-shadow: 0 14px 50px rgba(11,34,57,0.08);
+            border: 1px solid var(--border);
         }
 
-        h1 { color: #1a73e8; border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 20px; }
+        h1 {
+            color: var(--navy);
+            border-bottom: 3px solid var(--border);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            letter-spacing: 0.02em;
+        }
 
         /* --- TABS --- */
-        .tabs { display: flex; list-style: none; padding: 0; margin-bottom: 20px; border-bottom: 2px solid #1a73e8; }
+        .tabs { display: flex; list-style: none; padding: 0; margin-bottom: 20px; border-bottom: 2px solid var(--border); }
         .tab-link {
-            padding: 12px 25px; cursor: pointer; background: #f0f0f0; margin-right: 4px;
-            border-top-left-radius: 6px; border-top-right-radius: 6px; font-weight: 500;
+            padding: 12px 25px; cursor: pointer; background: #f7f9fc; margin-right: 4px;
+            border-top-left-radius: 10px; border-top-right-radius: 10px; font-weight: 600;
+            color: var(--muted);
+            border: 1px solid var(--border);
+            border-bottom: none;
         }
-        .tab-link.active { background: #1a73e8; color: white; }
+        .tab-link.active { background: var(--navy); color: white; box-shadow: 0 6px 18px rgba(20,60,107,0.24); }
 
         /* --- DASHBOARD GRID (Map Left, Data Right) --- */
         .dashboard-grid { display: flex; gap: 20px; }
-        
+
         /* Map is approx half size (55%) */
-        #map-wrapper { flex: 0 0 55%; height: 500px; position: relative; border-radius: 8px; overflow: hidden; border: 1px solid #ddd; }
+        #map-wrapper { flex: 0 0 55%; height: 500px; position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(11,34,57,0.08); }
         #map { width: 100%; height: 100%; }
 
         /* Data Panel (45%) */
         #data-panel {
             flex: 1;
             padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border: 1px solid #e0e0e0;
+            background: #fbfcfe;
+            border-radius: 12px;
+            border: 1px solid var(--border);
             overflow-y: auto;
             height: 460px; /* Matches map height minus padding */
+            box-shadow: 0 10px 30px rgba(11,34,57,0.08);
         }
 
         /* --- DATA TYPOGRAPHY --- */
-        .country-title { color: #1a73e8; margin-top: 0; font-size: 24px; }
-        .stat-row { display: flex; justify-content: space-between; border-bottom: 1px solid #ddd; padding: 10px 0; }
-        .stat-label { font-weight: bold; color: #555; }
-        .stat-value { font-weight: 400; color: #000; }
-        
-        .section-header { margin-top: 20px; font-size: 16px; font-weight: bold; color: #333; text-transform: uppercase; letter-spacing: 0.5px; }
-        .req-box { background: #fff; padding: 15px; border-left: 4px solid #d93025; margin-top: 10px; font-size: 14px; line-height: 1.5; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .country-title { color: var(--navy); margin-top: 0; font-size: 24px; }
+        .stat-row { display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); padding: 10px 0; }
+        .stat-label { font-weight: bold; color: var(--muted); letter-spacing: 0.01em; }
+        .stat-value { font-weight: 500; color: var(--ink); }
+
+        .section-header { margin-top: 20px; font-size: 16px; font-weight: bold; color: var(--ink); text-transform: uppercase; letter-spacing: 0.5px; }
+        .req-box { background: #fff; padding: 15px; border-left: 4px solid var(--gold); margin-top: 10px; font-size: 14px; line-height: 1.5; box-shadow: 0 2px 10px rgba(11,34,57,0.06); }
 
         .hidden { display: none; }
-        .instruction-text { color: #777; text-align: center; margin-top: 150px; }
+        .instruction-text { color: var(--muted); text-align: center; margin-top: 150px; }
     </style>
 </head>
 <body>
@@ -237,7 +267,10 @@
 
     // --- 2. MAP INITIALIZATION ---
     var map = L.map('map').setView([20, 20], 2); // Global view
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(map);
+    L.tileLayer('https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap, © CARTO'
+    }).addTo(map);
 
     // --- 3. ADD PINS TO MAP ---
     database.forEach(data => {
