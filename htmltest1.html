@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rouse MEA — Patents & Designs: Country One‑Pagers (Showcase)</title>
+    <style>
+        :root {
+            --primary: #c8102e; /* Rouse red (from branding guide) */
+            --primary-dark: #8f0f24;
+            --charcoal: #1f1f1f;
+            --slate: #3a3f47;
+            --muted: #6e7680;
+            --bg: #f5f5f7;
+            --card: #ffffff;
+            --border: #e5e7eb;
+            --soft: #f9ecef;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f7f7f9 35%, #f1f2f6 100%);
+            color: var(--charcoal);
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 32px 20px 48px;
+        }
+
+        header.hero {
+            background: linear-gradient(120deg, var(--primary) 0%, var(--primary-dark) 60%, #8b1025 100%);
+            color: #ffffff;
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.16), transparent 35%),
+                        radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.09), transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            margin: 0 0 10px;
+            font-size: 28px;
+            letter-spacing: 0.4px;
+        }
+
+        .meta-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 999px;
+            backdrop-filter: blur(2px);
+            color: #ffffff;
+        }
+
+        .summary {
+            margin-top: 16px;
+            max-width: 780px;
+            line-height: 1.6;
+            font-size: 15px;
+            color: #f2f5f7;
+        }
+
+        main {
+            margin-top: 28px;
+            display: grid;
+            gap: 22px;
+        }
+
+        .country-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 22px;
+            box-shadow: 0 16px 28px rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--border);
+        }
+
+        .country-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 14px;
+        }
+
+        .country-title {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .country-title h2 {
+            margin: 0;
+            font-size: 22px;
+            color: var(--charcoal);
+        }
+
+        .country-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 6px 10px;
+            border-radius: 10px;
+            background: var(--soft);
+            color: var(--primary);
+            border: 1px solid rgba(200, 16, 46, 0.18);
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 0.3px;
+        }
+
+        .country-top .fact-chip {
+            padding: 8px 12px;
+            background: #f0f2f5;
+            border-radius: 10px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 18px;
+            align-items: start;
+        }
+
+        .map-frame {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6);
+        }
+
+        .map-frame img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .panel {
+            background: linear-gradient(145deg, #ffffff, #fafbfc);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th, td {
+            padding: 9px 10px;
+            text-align: left;
+        }
+
+        th {
+            background: var(--soft);
+            color: var(--charcoal);
+            font-weight: 700;
+            border-bottom: 2px solid rgba(200, 16, 46, 0.35);
+        }
+
+        td {
+            border-bottom: 1px solid #eef0f3;
+            color: #2f3338;
+        }
+
+        tbody tr:hover td {
+            background: #fcfcff;
+        }
+
+        .section-title {
+            margin: 20px 0 12px;
+            font-size: 18px;
+            color: var(--charcoal);
+            letter-spacing: 0.2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: "";
+            width: 6px;
+            height: 20px;
+            border-radius: 6px;
+            background: var(--primary);
+            display: inline-block;
+        }
+
+        .note-box {
+            margin-top: 12px;
+            background: #fff6f7;
+            border: 1px solid rgba(200, 16, 46, 0.25);
+            border-radius: 10px;
+            padding: 12px 14px;
+            color: #5b1c26;
+            line-height: 1.5;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        @media (max-width: 900px) {
+            .content-grid { grid-template-columns: 1fr; }
+            .country-top { flex-direction: column; }
+        }
+
+        @media (max-width: 600px) {
+            .page { padding: 22px 14px; }
+            header.hero { padding: 22px; }
+            .hero h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header class="hero">
+            <h1>Rouse MEA — Patents & Designs: Country One‑Pagers</h1>
+            <div class="meta-row">
+                <span class="pill">Version 1.0</span>
+                <span class="pill">Prepared: 2025‑08‑09</span>
+                <span class="pill">Scope: Patent & design filing formalities</span>
+            </div>
+            <p class="summary">
+                Quick‑scan one‑pagers combining key facts, documentary requirements, and execution guidance for priority/Paris/PCT national phase filings. Designed for rapid client briefings and team reference while aligning with Rouse’s brand presentation.
+            </p>
+        </header>
+
+        <main>
+            <article class="country-card">
+                <div class="country-top">
+                    <div class="country-title">
+                        <h2>United Arab Emirates (UAE) — Patents & Designs</h2>
+                        <div class="country-tags">
+                            <span class="tag">National (Paris / PCT NP)</span>
+                            <span class="tag">Arabic & English</span>
+                            <span class="tag">MOE Patent Office</span>
+                        </div>
+                    </div>
+                    <div class="fact-chip">Last verified: 2025‑08‑09</div>
+                </div>
+
+                <div class="content-grid">
+                    <div class="map-frame">
+                        <img src="/workspaces/Rouse-MENA_INFO/MENA/uae.png" alt="United Arab Emirates (UAE) Map">
+                    </div>
+                    <div class="panel">
+                        <table>
+                            <tbody>
+                                <tr><th>Key Facts</th><th>Details</th></tr>
+                                <tr><td><strong>Population</strong></td><td>10,876,981 (2024)</td></tr>
+                                <tr><td><strong>System / Coverage</strong></td><td>National (Paris/PCT NP)</td></tr>
+                                <tr><td><strong>Office / Authority</strong></td><td>UAE Ministry of Economy — Patent Office</td></tr>
+                                <tr><td><strong>Filing language(s)</strong></td><td>Arabic &amp; English</td></tr>
+                                <tr><td><strong>Translation rule</strong></td><td>Arabic translation as required (title/abstract at filing; full text by invitation/≈90 days)</td></tr>
+                                <tr><td><strong>Last verified</strong></td><td>2025‑08‑09</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <h3 class="section-title">Documentary Requirements (Patents & Designs)</h3>
+                <div class="panel">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Document</th>
+                                <th>Required? (P/D)</th>
+                                <th>Deadline from Filing</th>
+                                <th>Form (filed)</th>
+                                <th>Execution (how)</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Power of Attorney</td>
+                                <td>Y/Y</td>
+                                <td>90 days</td>
+                                <td>Original</td>
+                                <td>Notarized</td>
+                                <td>Practice varies re: legalization; confirm current rule. Conf ~70%.</td>
+                            </tr>
+                            <tr>
+                                <td>Assignment (inventor→applicant)</td>
+                                <td>Y/Y</td>
+                                <td>90 days</td>
+                                <td>Original</td>
+                                <td>Notarized</td>
+                                <td>If applicant ≠ inventor. Conf ~70%.</td>
+                            </tr>
+                            <tr>
+                                <td>Commercial/Trade Licence or Register Extract</td>
+                                <td>Y/Y</td>
+                                <td>90 days</td>
+                                <td>Copy or certified copy</td>
+                                <td>Often notarized/legalized</td>
+                                <td>Corporate applicants. Conf ~60%.</td>
+                            </tr>
+                            <tr>
+                                <td>Priority Document (if claimed)</td>
+                                <td>Y/Y</td>
+                                <td>3 months</td>
+                                <td>Certified copy</td>
+                                <td>Simple</td>
+                                <td>PCT NP usually via IB.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="note-box">Missing mandatory docs typically rectifiable within 90 days; late fees/office invitation may apply.</div>
+            </article>
+
+            <article class="country-card">
+                <div class="country-top">
+                    <div class="country-title">
+                        <h2>South Africa (RSA) — Patents & Designs</h2>
+                        <div class="country-tags">
+                            <span class="tag">National (Paris / PCT NP)</span>
+                            <span class="tag">English</span>
+                            <span class="tag">CIPC</span>
+                        </div>
+                    </div>
+                    <div class="fact-chip">Last verified: 2025‑08‑09</div>
+                </div>
+
+                <div class="content-grid">
+                    <div class="map-frame">
+                        <img src="/workspaces/Rouse-MENA_INFO/Africa/south_africa.png" alt="South Africa (RSA) Map">
+                    </div>
+                    <div class="panel">
+                        <table>
+                            <tbody>
+                                <tr><th>Key Facts</th><th>Details</th></tr>
+                                <tr><td><strong>Population</strong></td><td>≈63.1 million (2024 est.)</td></tr>
+                                <tr><td><strong>System / Coverage</strong></td><td>National (Paris/PCT NP)</td></tr>
+                                <tr><td><strong>Office / Authority</strong></td><td>Companies and Intellectual Property Commission (CIPC)</td></tr>
+                                <tr><td><strong>Filing language(s)</strong></td><td>English</td></tr>
+                                <tr><td><strong>Translation rule</strong></td><td>No translation required (English filing)</td></tr>
+                                <tr><td><strong>Last verified</strong></td><td>2025‑08‑09</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <h3 class="section-title">Documentary Requirements (Patents & Designs)</h3>
+                <div class="panel">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Document</th>
+                                <th>Required? (P/D)</th>
+                                <th>Deadline from Filing</th>
+                                <th>Form (filed)</th>
+                                <th>Execution (how)</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Power of Attorney (Form P3)</td>
+                                <td>Y/Y</td>
+                                <td>Within ~6 months (extendable)</td>
+                                <td>Original or signed copy</td>
+                                <td>Simple (no notarization/legalization)</td>
+                                <td>Conf ≥85%.</td>
+                            </tr>
+                            <tr>
+                                <td>Proof of entitlement / Assignment</td>
+                                <td>Y/Y (if applicant ≠ inventor)</td>
+                                <td>Within ~6 months (pre‑acceptance)</td>
+                                <td>Signed assignment/affidavit</td>
+                                <td>Simple</td>
+                                <td>Conf ≥85%.</td>
+                            </tr>
+                            <tr>
+                                <td>Commercial/Corporate docs</td>
+                                <td>N/N</td>
+                                <td>—</td>
+                                <td>—</td>
+                                <td>—</td>
+                                <td>Not required.</td>
+                            </tr>
+                            <tr>
+                                <td>Priority Document (if Paris)</td>
+                                <td>Y/Y</td>
+                                <td>Within 6 months (extendable)</td>
+                                <td>Certified copy</td>
+                                <td>Simple</td>
+                                <td>PCT NP handled via IB.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="note-box">Deposit system (formalities); docket acceptance deadlines.</div>
+            </article>
+        </main>
+
+        <footer>
+            Prepared 2025‑08‑09 · Verify formalities with latest office circulars/local counsel before filing.
+        </footer>
+    </div>
+</body>
+</html>
