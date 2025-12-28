@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Profile | Rouse GEA Hub</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <a href="index.html" class="back-btn glass">← Back to Map</a>
+
+    <header class="detail-header" id="header">
+        <h1 id="country-name" class="animate-in">Loading...</h1>
+        <p class="subtitle animate-in" style="animation-delay: 0.2s">Detailed Patent & Design Fee Schedules</p>
+    </header>
+
+    <main class="container animate-in" style="animation-delay: 0.4s" id="content-main">
+        <!-- Sections will be injected here -->
+    </main>
+
+    <footer style="text-align: center; padding: 4rem; color: var(--text-muted); font-size: 0.8rem;">
+        &copy; 2025 Rouse. Wording verified against official geographic hub fee schedules.
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const params = new URLSearchParams(window.location.search);
+            const countryName = params.get('country');
+
+            if (!countryName) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            document.getElementById('country-name').textContent = countryName;
+            document.title = `${countryName} | Rouse GEA Hub`;
+
+            try {
+                const res = await fetch('assets/data/data.json');
+                const allData = await res.json();
+                const data = allData[countryName];
+
+                if (!data) {
+                    document.getElementById('content-main').innerHTML = '<p>Data not found for this country.</p>';
+                    return;
+                }
+
+                const main = document.getElementById('content-main');
+
+                data.sections.forEach(section => {
+                    const secEl = document.createElement('section');
+                    secEl.innerHTML = `<h2 class="section-title">${section.title}</h2>`;
+
+                    const table = document.createElement('table');
+                    const hasFees = section.items.some(i => i.prof_fee || i.comm_fee || i.indiv_fee);
+
+                    if (hasFees) {
+                        table.innerHTML = `
+                            <thead>
+                                <tr>
+                                    <th>Charges and Official Fees</th>
+                                    <th>Professional Fees (US$)</th>
+                                    <th>Company Official Fee (US$)</th>
+                                    <th>Individual Official Fee (US$)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sec-${section.title.replace(/\s+/g, '-')}"></tbody>
+                        `;
+                    } else {
+                        table.innerHTML = `<tbody id="sec-${section.title.replace(/\s+/g, '-')}"></tbody>`;
+                    }
+
+                    const tbody = table.querySelector('tbody');
+
+                    section.items.forEach(item => {
+                        if (item.type === 'note') {
+                            const note = document.createElement('div');
+                            note.className = 'note glass';
+                            note.innerText = item.content;
+                            secEl.appendChild(note);
+                        } else {
+                            const tr = document.createElement('tr');
+                            if (hasFees) {
+                                tr.innerHTML = `
+                                    <td>${item.description}</td>
+                                    <td>${item.prof_fee || '—'}</td>
+                                    <td>${item.comm_fee || '—'}</td>
+                                    <td>${item.indiv_fee || '—'}</td>
+                                `;
+                            } else {
+                                // Formality documents might have a different structure in Excel, 
+                                // but our extractor currently maps them to description/prof_fee
+                                tr.innerHTML = `
+                                    <td>${item.description}</td>
+                                    <td colspan="3">${item.prof_fee || ''}</td>
+                                `;
+                            }
+                            tbody.appendChild(tr);
+                        }
+                    });
+
+                    secEl.appendChild(table);
+                    main.appendChild(secEl);
+                });
+
+            } catch (err) {
+                console.error('Error loading country data:', err);
+            }
+        });
+    </script>
+</body>
+
+</html>

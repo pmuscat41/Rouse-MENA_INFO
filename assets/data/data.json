@@ -1,0 +1,1358 @@
+{
+    "Algeria": {
+        "name": "Algeria",
+        "sections": [
+            {
+                "title": "Applications",
+                "items": [
+                    {
+                        "description": "Filing a patent application and payment of 1st annuity",
+                        "prof_fee": "1605",
+                        "comm_fee": "142",
+                        "indiv_fee": "125"
+                    },
+                    {
+                        "description": "Claiming Priority (per priority)",
+                        "prof_fee": "161",
+                        "comm_fee": "23",
+                        "indiv_fee": "23"
+                    },
+                    {
+                        "description": "Translation of application/supporting documents (English to Arabic)",
+                        "prof_fee": "50/200 words",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Translation of drawings (English to Arabic)",
+                        "prof_fee": "50/page",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Translation of application/supporting documents (English to French)",
+                        "prof_fee": "35/200 words",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Translation of drawings (English to French)",
+                        "prof_fee": "35/page",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Photocopy charges for 3 copies of specification",
+                        "prof_fee": "0.35/page",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Excess page surcharge for specification",
+                        "prof_fee": "94 for 11-15 pages\n74 for each additioinal set of 5 pages over 15",
+                        "comm_fee": "14 for 11-15 pages_x000D_\n14 for each additioinal set of 5 pages over 15",
+                        "indiv_fee": "11 for 11-15 pages\n11 for each additioinal set of 5 pages over 15"
+                    },
+                    {
+                        "description": "Excess page surcharge for publication of small size drawings over 3",
+                        "prof_fee": "36 for the 4th drawing\n31 for each drawing over 4",
+                        "comm_fee": "5",
+                        "indiv_fee": "4"
+                    },
+                    {
+                        "description": "Excess page surcharge for publication of large size drawings over 1",
+                        "prof_fee": "60 for the 2nd drawing\n55 for each drawing over 3",
+                        "comm_fee": "12 for each additional drawing over 1",
+                        "indiv_fee": "10 for each additional drawing over 1"
+                    },
+                    {
+                        "description": "Amendment of drawings for compliance, if required, per page",
+                        "prof_fee": "5",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Late filing of formality documents",
+                        "prof_fee": "416",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Late filing of Arabic/ French translation of application",
+                        "prof_fee": "301",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    }
+                ]
+            },
+            {
+                "title": "Formal examination",
+                "items": [
+                    {
+                        "description": "Reporting formal examination report",
+                        "prof_fee": "290",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Filing response to formal examination report",
+                        "prof_fee": "386",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    }
+                ]
+            },
+            {
+                "title": "Grant",
+                "items": [
+                    {
+                        "description": "Reporting Notice of Acceptance",
+                        "prof_fee": "100",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Docketing and forwarding Letters Patent (including courier charges)",
+                        "prof_fee": "800",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    }
+                ]
+            },
+            {
+                "title": "Formality documents requirement",
+                "items": [
+                    {
+                        "description": "Power of Attorney, simply signed",
+                        "prof_fee": "Yes",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Deed of assignment, certified (if applicant is different from the inventor)",
+                        "prof_fee": "Yes",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Priority application, certified",
+                        "prof_fee": "Yes",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "type": "note",
+                        "content": "Timeline for filing formality documents : \nTranslation of patent application at the time of filing \nPower of Attorney and Deed of Assignment : within two months from the filing date\nCertified priority application: within three months from the filing date"
+                    },
+                    {
+                        "type": "note",
+                        "content": "Note: all of the above documents must be translated into Arabic or French before filing"
+                    }
+                ]
+            }
+        ]
+    },
+    "ARIPO": {
+        "name": "ARIPO",
+        "sections": [
+            {
+                "title": "Grant",
+                "items": [
+                    {
+                        "description": "Reporting notice of acceptance",
+                        "prof_fee": "75",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Payment of publication and grant fee, Request for issuance of Letters Patent and publication, docketing and forwarding Letters Patent (including courier charges)",
+                        "prof_fee": "600",
+                        "comm_fee": "500",
+                        "indiv_fee": ""
+                    }
+                ]
+            },
+            {
+                "title": "Formality documents requirement",
+                "items": [
+                    {
+                        "description": "Required Formality documents",
+                        "prof_fee": "Company applicant",
+                        "comm_fee": "Individual applicant",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Power of Attorney, simply signed",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Deed of Assignment, simply signed",
+                        "prof_fee": "Yes",
+                        "comm_fee": "No",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Commercial Certificate, scanned copy",
+                        "prof_fee": "Yes",
+                        "comm_fee": "No",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Priority application, if not lodged in the international phase",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "PCT documents, if applicable (Publication, ISR, WO, IPRP)",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "type": "note",
+                        "content": "Timeline for filing formality documents : \nPower of Attorney - within 2 months from filing date\nDeed of Assignment - within 4 months from filing date \nCertified priority document - within 3 months from filing date"
+                    }
+                ]
+            }
+        ]
+    },
+    "Bahrain": {
+        "name": "Bahrain",
+        "sections": [
+            {
+                "title": "Formal examination",
+                "items": [
+                    {
+                        "description": "Reporting formal examination report",
+                        "prof_fee": "355",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Filing response to formal examination report",
+                        "prof_fee": "510",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    }
+                ]
+            },
+            {
+                "title": "Grant",
+                "items": [
+                    {
+                        "description": "Reporting Notice of Acceptance",
+                        "prof_fee": "100",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Payment of publication and grant fees, request for issuance of Letters Patent, Docketing and forwarding Letters Patent (including courier charges)",
+                        "prof_fee": "1340",
+                        "comm_fee": "851",
+                        "indiv_fee": "133"
+                    }
+                ]
+            },
+            {
+                "title": "Formality documents requirement",
+                "items": [
+                    {
+                        "description": "Power of Attorney, certified by Apostille",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Deed of assignment, certified by Apostille (if applicant is different from the inventor)",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "type": "note",
+                        "content": "Timeline for filing formality documents and Arabic translation of application: Within 3 months from filing date"
+                    },
+                    {
+                        "description": "*The official fees for substantive examination are determined by the Bahraini Patent Office  on a case-by-case basis and are set out in the official notice requesting payment of examination fees",
+                        "prof_fee": "",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    }
+                ]
+            }
+        ]
+    },
+    "Egypt": {
+        "name": "Egypt",
+        "sections": [
+            {
+                "title": "Formal examination",
+                "items": [
+                    {
+                        "description": "Reporting formal examination report",
+                        "prof_fee": "405",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Filing response to formal examination report",
+                        "prof_fee": "455",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    }
+                ]
+            },
+            {
+                "title": "Grant",
+                "items": [
+                    {
+                        "description": "Reporting notice to pay printing fees",
+                        "prof_fee": "560",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Printing Arabic specification and drawings as filed, for circularization/ publication",
+                        "prof_fee": "15/page",
+                        "comm_fee": "1",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Payment of printing fees, filing of 5 copies of specification, request for issuance of Letters Patent, docketing and forwarding Letters Patent (including courier charges)",
+                        "prof_fee": "1032",
+                        "comm_fee": "16",
+                        "indiv_fee": ""
+                    }
+                ]
+            },
+            {
+                "title": "Formality documents requirement",
+                "items": [
+                    {
+                        "description": "Power of Attorney, legalised upto Egyptian Embassy",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Priority application (for covention application only)",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Timeline for filing formality document: Within 4 months minus 1 day from the filing date",
+                        "prof_fee": "",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Timeline for filing late filing of Arabic translation of application: Within 6 months minus 1 day from the filing date",
+                        "prof_fee": "",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "type": "note",
+                        "content": "Note: all of the above documents must be translated into Arabic before filing"
+                    }
+                ]
+            }
+        ]
+    },
+    "GCC": {
+        "name": "GCC",
+        "sections": [
+            {
+                "title": "Applications",
+                "items": [
+                    {
+                        "description": "Filing patent application and completing formalities",
+                        "prof_fee": "2000",
+                        "comm_fee": "800",
+                        "indiv_fee": "400"
+                    },
+                    {
+                        "description": "Claiming priority (per priority)",
+                        "prof_fee": "75",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Translation of application/supporting documents (English to Arabic)",
+                        "prof_fee": "50/200 words",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Translation of drawings (English to Arabic)",
+                        "prof_fee": "50/per page",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Late filing of Arabic translation of specification and drawings",
+                        "prof_fee": "250",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Late filing of formality documents",
+                        "prof_fee": "Included in filing fees",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    }
+                ]
+            },
+            {
+                "title": "Formal examination",
+                "items": [
+                    {
+                        "description": "Reporting results of formal examination",
+                        "prof_fee": "250",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Reporting miscellaneous notification",
+                        "prof_fee": "100",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Filing response to formal examination report",
+                        "prof_fee": "250",
+                        "comm_fee": "270",
+                        "indiv_fee": "135"
+                    }
+                ]
+            },
+            {
+                "title": "Grant",
+                "items": [
+                    {
+                        "description": "Reporting notice to pay publication and grant fees",
+                        "prof_fee": "100",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Request for Publication and reporting publication, request for issuance of Letters Patent, Docketing and forwarding Letters Patent (including courier charges)",
+                        "prof_fee": "1050",
+                        "comm_fee": "1335",
+                        "indiv_fee": "668"
+                    },
+                    {
+                        "description": "*Under the old patent law, the GCC Patent Law provided for a unitary right covering the above six-member state and a granted patent will automatically be valid in these countries. Until 6 January 2021, it was possible to obtain a national and regional patent for the same invention at the GCC Patent Office. The GCC Patent Office announced in its 20th session that it will stop accepting filing of patent applications with immediate effect. To obtain protection in the GCC, a separate application has to be filed in each of its member states. The GCC Patent Office recently announced that, as from 1 January 2023, will resume receiving new patent applications. The Head of Filing and Grant at the GCC Patent Office confirmed that only 12-month convention applications can be filed (as was the case in the past). Also, one application can cover both, Bahrain and Kuwait. At this stage, there is no indication of the estimated timeline for disclosing information regarding the services to be rendered by the GCC Patent Office on behalf Saudi Arabia, Oman, Qatar and UAE. The on-line system does not currently allow electing any of these countries when filing a GCC application. To obtain protection in Saudi Arabia, Oman, Qatar and UAE, we recommend separate applications to be filed in each of its member state.",
+                        "prof_fee": "",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    }
+                ]
+            },
+            {
+                "title": "Formality documents requirement",
+                "items": [
+                    {
+                        "description": "Power of Attorney, notarised and legalised up to the Embassy/Consulate of any of the GCC member states",
+                        "prof_fee": "",
+                        "comm_fee": "Yes",
+                        "indiv_fee": "Yes"
+                    },
+                    {
+                        "description": "Deed of Assignment (if inventor and applicant differ), notarised and legalised up to the Embassy/Consulate of any of the GCC member states",
+                        "prof_fee": "",
+                        "comm_fee": "Yes",
+                        "indiv_fee": "Yes"
+                    },
+                    {
+                        "description": "Commercial Certificate Commercial Certificate, notarised and legalised up to the Embassy/Consulate of any of the GCC member states",
+                        "prof_fee": "",
+                        "comm_fee": "Yes",
+                        "indiv_fee": "No"
+                    },
+                    {
+                        "description": "Certified copy of the priority application, if priority is claimed",
+                        "prof_fee": "",
+                        "comm_fee": "Yes",
+                        "indiv_fee": "Yes"
+                    },
+                    {
+                        "description": "The time period for filing formality documents at the GCC Patent Office is within three months from the latest of the filing date or issuance date of a formal examination report.",
+                        "prof_fee": "",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    }
+                ]
+            }
+        ]
+    },
+    "Israel": {
+        "name": "Israel",
+        "sections": [
+            {
+                "title": "Formal examination",
+                "items": [
+                    {
+                        "description": "Reporting formal examination report",
+                        "prof_fee": "450",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Filing response to formal examination report",
+                        "prof_fee": "450",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    }
+                ]
+            },
+            {
+                "title": "Grant",
+                "items": [
+                    {
+                        "description": "Reporting Notice of Acceptance",
+                        "prof_fee": "575",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Request for publication and reporting publication, request for issuance of Letters Patent, docketing and forwarding Letters Patent (including courier charges)",
+                        "prof_fee": "850",
+                        "comm_fee": "210",
+                        "indiv_fee": ""
+                    }
+                ]
+            },
+            {
+                "title": "Formality documents requirement",
+                "items": [
+                    {
+                        "description": "Power of Attorney, simple copy",
+                        "prof_fee": "Yes",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Certificate of Incorporation, simple copy",
+                        "prof_fee": "Yes",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Deed of assignment, simple copy",
+                        "prof_fee": "Yes",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Priority application, simple copy",
+                        "prof_fee": "Yes",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "type": "note",
+                        "content": "Timeline for filing formality documents : Should be with filing of the application,  otherwise, a formality Office Action will be issued; documents will have to be filed within 3 months from Office Action issuance date."
+                    }
+                ]
+            }
+        ]
+    },
+    "Kuwait": {
+        "name": "Kuwait",
+        "sections": [
+            {
+                "title": "Applications",
+                "items": [
+                    {
+                        "description": "Filing a patent application",
+                        "prof_fee": "1460",
+                        "comm_fee": "267",
+                        "indiv_fee": "133"
+                    },
+                    {
+                        "description": "Claiming Priority (per priority)",
+                        "prof_fee": "165",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Translation of application/supporting documents (English to Arabic)",
+                        "prof_fee": "50/200 words",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Translation of drawings (English to Arabic)",
+                        "prof_fee": "50/page",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Filing of formality documents",
+                        "prof_fee": "300",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Late filing of Arabic translation of application",
+                        "prof_fee": "300",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Super-legalisation of Power of Attorney by Kuwaiti Ministry of Foreign Affairs and Ministry of Justice (per document)",
+                        "prof_fee": "65",
+                        "comm_fee": "30",
+                        "indiv_fee": "30"
+                    }
+                ]
+            },
+            {
+                "title": "Formal examination",
+                "items": [
+                    {
+                        "description": "Reporting formal examination report",
+                        "prof_fee": "340",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Filing response to formal examination report",
+                        "prof_fee": "480",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    }
+                ]
+            },
+            {
+                "title": "Grant",
+                "items": [
+                    {
+                        "description": "Reporting Notice of Acceptance",
+                        "prof_fee": "260",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Request for Publication and reporting publication, request for issuance of Letters Patent, Docketing and forwarding Letters Patent (including courier charges)",
+                        "prof_fee": "1206",
+                        "comm_fee": "333",
+                        "indiv_fee": "167"
+                    }
+                ]
+            },
+            {
+                "title": "Formality documents requirement",
+                "items": [
+                    {
+                        "description": "Power of Attorney legalised upto Kuwaiti Embassy",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "type": "note",
+                        "content": "Timeline for filing formality documents and Arabic translation of application: Within 3 months from the filing date"
+                    },
+                    {
+                        "type": "note",
+                        "content": "Note: all of the above documents must be translated into Arabic before filing"
+                    }
+                ]
+            }
+        ]
+    },
+    "Morocco": {
+        "name": "Morocco",
+        "sections": [
+            {
+                "title": "Grant",
+                "items": [
+                    {
+                        "description": "Reporting Notice of Acceptance and Payment of Grant Fees",
+                        "prof_fee": "100",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Payment of grant fees, request for issuance of Letters Patent, Docketing and forwarding Letters Patent",
+                        "prof_fee": "1170",
+                        "comm_fee": "300",
+                        "indiv_fee": ""
+                    }
+                ]
+            },
+            {
+                "title": "Formality documents requirement",
+                "items": [
+                    {
+                        "description": "Power of Attorney, simply signed",
+                        "prof_fee": "Yes",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Certified priority application (required for convention application only)",
+                        "prof_fee": "Yes",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Granted claims in French as indicated in the European Patent Register (required only for filing a national validation of a EP patent)",
+                        "prof_fee": "Yes",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Timeline for filing formality document and Arabic/ French translation of the application : within 3 months from filing date.",
+                        "prof_fee": "",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "type": "note",
+                        "content": "Note: all of the above documents must be translated into Arabic or French before filing"
+                    }
+                ]
+            }
+        ]
+    },
+    "Madagascar": {
+        "name": "Madagascar",
+        "sections": [
+            {
+                "title": "Applications",
+                "items": [
+                    {
+                        "description": "Filing a patent application including payment of 1st and 2nd annuities",
+                        "prof_fee": "2310",
+                        "comm_fee": "75",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Claiming Priority (per priority) french",
+                        "prof_fee": "225",
+                        "comm_fee": "23",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Translation of application (English to French)",
+                        "prof_fee": "",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Translation of drawings (English to French)",
+                        "prof_fee": "",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Excess claim fees, for each claim after 10th",
+                        "prof_fee": "35",
+                        "comm_fee": "21",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Excess page fees for each page after 20th",
+                        "prof_fee": "34",
+                        "comm_fee": "9",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Filing of formality documents",
+                        "prof_fee": "250",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    }
+                ]
+            },
+            {
+                "title": "Formal examination",
+                "items": [
+                    {
+                        "description": "Reporting formal examination report",
+                        "prof_fee": "325",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Filing response to formal examination report",
+                        "prof_fee": "400",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    }
+                ]
+            },
+            {
+                "title": "Grant",
+                "items": [
+                    {
+                        "description": "Reporting grant, request for issuance of Letters Patent, docketing and forwarding Letters Patent (including courier charges)",
+                        "prof_fee": "1225",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    }
+                ]
+            },
+            {
+                "title": "Formality documents requirement",
+                "items": [
+                    {
+                        "description": "Formality documents",
+                        "prof_fee": "Required?",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Power of Attorney, notorised",
+                        "prof_fee": "Yes",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Certificate of Incorporation, simple copy",
+                        "prof_fee": "Yes",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Deed of Assignment, simple copy",
+                        "prof_fee": "Yes",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Priority application, translated in French",
+                        "prof_fee": "Yes",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "type": "note",
+                        "content": "Timeline for filing formality documents:  Power of Attorney, Certificate of Incorporation, Deed of Assignment and priority application in French are required on filing."
+                    }
+                ]
+            }
+        ]
+    },
+    "Nigeria": {
+        "name": "Nigeria",
+        "sections": [
+            {
+                "title": "Formal examination",
+                "items": [
+                    {
+                        "description": "Reporting formal examination",
+                        "prof_fee": "75",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Filing response to formal examination",
+                        "prof_fee": "350",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    }
+                ]
+            },
+            {
+                "title": "Grant",
+                "items": [
+                    {
+                        "description": "Reporting notice of acceptance",
+                        "prof_fee": "75",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Reporting and forwarding Letters Patent",
+                        "prof_fee": "450",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    }
+                ]
+            },
+            {
+                "title": "Formality documents requirement",
+                "items": [
+                    {
+                        "description": "Power of Attorney, simple signed",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Deed of Assignment (if inventor and applicant differ) simple copy",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Priority document, simple copy, if not lodged at the international phase",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "PCT,ISR/WO/IPRP, if applicable, simple copies in English",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "type": "note",
+                        "content": "Timeline for filing formality documents: within 3 months from the filing date"
+                    }
+                ]
+            }
+        ]
+    },
+    "OAPI": {
+        "name": "OAPI",
+        "sections": [
+            {
+                "title": "Grant",
+                "items": [
+                    {
+                        "description": "Payment of grant fees, docketing and forwarding Letters Patent (including courier charges)",
+                        "prof_fee": "595",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    }
+                ]
+            },
+            {
+                "title": "Formality documents requirement",
+                "items": [
+                    {
+                        "description": "Power of Attorney, simply signed",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Certificate of Incorporation, simple copy",
+                        "prof_fee": "Yes",
+                        "comm_fee": "No",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Deed of assignment, simply signed",
+                        "prof_fee": "Yes",
+                        "comm_fee": "No",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Priority application, certified copy",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "type": "note",
+                        "content": "Timeline for filing formality documents:"
+                    },
+                    {
+                        "description": "Power of Attorney - must be filed within 3 months from filing application",
+                        "prof_fee": "",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Certificate of Incorporation - at the time of filing application",
+                        "prof_fee": "",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Deed of assignment - at the time of filing application",
+                        "prof_fee": "",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Priority application - must be filed within 6 months from filing application",
+                        "prof_fee": "",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    }
+                ]
+            }
+        ]
+    },
+    "Oman": {
+        "name": "Oman",
+        "sections": [
+            {
+                "title": "Formal examination",
+                "items": [
+                    {
+                        "description": "Reporting formal examination report",
+                        "prof_fee": "485",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Filing response to formal examination report",
+                        "prof_fee": "460",
+                        "comm_fee": "130",
+                        "indiv_fee": "130"
+                    }
+                ]
+            },
+            {
+                "title": "Grant",
+                "items": [
+                    {
+                        "description": "Reporting Notice of Acceptance",
+                        "prof_fee": "270",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Request for Publication and reporting publication, request for issuance of Letters Patent, Docketing and forwarding Letters Patent",
+                        "prof_fee": "1665",
+                        "comm_fee": "2864",
+                        "indiv_fee": "1562"
+                    }
+                ]
+            },
+            {
+                "title": "Formality documents requirement",
+                "items": [
+                    {
+                        "description": "Power of Attorney, certifed by Apostille",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Certificate of Incorporation, simple copy",
+                        "prof_fee": "Yes",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Deed of assignment, certified by Apostille (if applicant is different from the inventor)",
+                        "prof_fee": "Yes",
+                        "comm_fee": "yes ",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Certified priority application, (required for convention application only)",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "type": "note",
+                        "content": "Timeline for filing formality documents : \nPower of Attorney - within 60 days from filing date of Omani application; \nArabic translation of application, Certificate of incorporation, Deed of Assignment and certified priority application - within 90 days from filing date of Omani application"
+                    },
+                    {
+                        "type": "note",
+                        "content": "Note: all of the above documents must be translated into Arabic before filing"
+                    }
+                ]
+            }
+        ]
+    },
+    "Qatar": {
+        "name": "Qatar",
+        "sections": [
+            {
+                "title": "Formal examination",
+                "items": [
+                    {
+                        "description": "Reporting formal examination report",
+                        "prof_fee": "336",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Filing response to formal examination report",
+                        "prof_fee": "550",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    }
+                ]
+            },
+            {
+                "title": "Grant",
+                "items": [
+                    {
+                        "description": "Reporting Notice of Acceptance",
+                        "prof_fee": "260",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Payment of publication and grant fees, request for issuance of Letters Patent, docketing and forwarding Letters Patent",
+                        "prof_fee": "1375",
+                        "comm_fee": "440",
+                        "indiv_fee": "220"
+                    }
+                ]
+            },
+            {
+                "title": "Formality documents requirement",
+                "items": [
+                    {
+                        "description": "Power of Attorney, legalised upto Qatari Embassy",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Certified priority application with Arabic translation, if applicable",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Timeline for filing power of attorney : within six months from filing date.\n\nTimeline for filing certified priority application and  late filing of Arabic translation : within three months from filing date.",
+                        "prof_fee": "",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "type": "note",
+                        "content": "Note: all of the above documents must be translated into Arabic before filing"
+                    }
+                ]
+            }
+        ]
+    },
+    "Saudi Arabia": {
+        "name": "Saudi Arabia",
+        "sections": [
+            {
+                "title": "Formal examination",
+                "items": [
+                    {
+                        "description": "Reporting formal examination report",
+                        "prof_fee": "246",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Filing response to formal examination report",
+                        "prof_fee": "518",
+                        "comm_fee": "55",
+                        "indiv_fee": "27.5"
+                    }
+                ]
+            },
+            {
+                "title": "Grant",
+                "items": [
+                    {
+                        "description": "Reporting notice of grant and issuance",
+                        "prof_fee": "100",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Payment of grant fees, Docketing and forwarding Letters Patent (including courier charges)",
+                        "prof_fee": "1605",
+                        "comm_fee": "270",
+                        "indiv_fee": "135"
+                    }
+                ]
+            },
+            {
+                "title": "Formality documents requirement",
+                "items": [
+                    {
+                        "description": "Power of Attorney, certifed by Apostille",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Deed of Assignment, certified by Apostille (if inventor and applicant differ) (not applicable for national phase entry applications)",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Certified priority application (required for convention application only) with Arabic translation (and English translation, if not in English)",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "type": "note",
+                        "content": "Timeline for filing formality documents and Arabic translation of application : Timeline for filing formality documents and Arabic translation of application: within 60 days from filing."
+                    },
+                    {
+                        "type": "note",
+                        "content": "Note: all of the above documents must be translated into Arabic before filing"
+                    }
+                ]
+            }
+        ]
+    },
+    "South Africa": {
+        "name": "South Africa",
+        "sections": [
+            {
+                "title": "Grant",
+                "items": [
+                    {
+                        "description": "Reporting notice of acceptance",
+                        "prof_fee": "75",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Issuance of Letters Patent, Docketing and forwarding Letters Patent",
+                        "prof_fee": "635",
+                        "comm_fee": "0",
+                        "indiv_fee": ""
+                    }
+                ]
+            },
+            {
+                "title": "Formality documents requirement",
+                "items": [
+                    {
+                        "description": "Form P3, simply signed",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Form P26, simply signed",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Power of Attorney, simply signed",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Deed of Assignment, if applicant and inventor is different, simply signed, scanned copy",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Commercial Certificate, scanned copy",
+                        "prof_fee": "Yes",
+                        "comm_fee": "No",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Priority application, if applicable, Certified copy, if not lodged in the international phase",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "PCT documents, if applicable (Publication, ISR, WO, IPRP), simple copy",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "type": "note",
+                        "content": "Timeline for filing formality documents : The original signed documents (Form P3, P26 and PoA) must be lodged within an extendible period of 6 months"
+                    }
+                ]
+            }
+        ]
+    },
+    "UAE": {
+        "name": "UAE",
+        "sections": [
+            {
+                "title": "Formal examination",
+                "items": [
+                    {
+                        "description": "Reporting results of formal examination (E.g. Amendment order, Notice to divide, etc.)",
+                        "prof_fee": "250",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Reporting miscellaneous notices",
+                        "prof_fee": "100",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Filing response to the formal examination report",
+                        "prof_fee": "250",
+                        "comm_fee": "110",
+                        "indiv_fee": "55"
+                    }
+                ]
+            },
+            {
+                "title": "Grant",
+                "items": [
+                    {
+                        "description": "Reporting notice to pay publication fees",
+                        "prof_fee": "100",
+                        "comm_fee": "0",
+                        "indiv_fee": "0"
+                    },
+                    {
+                        "description": "Request for publication and reporting publication, request for issuance of letters patent, docketing and forwarding the letters patent",
+                        "prof_fee": "800",
+                        "comm_fee": "221",
+                        "indiv_fee": "110"
+                    },
+                    {
+                        "description": "Amendment/correction of errors on letters patent",
+                        "prof_fee": "300",
+                        "comm_fee": "275",
+                        "indiv_fee": "275"
+                    }
+                ]
+            },
+            {
+                "title": "Formality documents requirement",
+                "items": [
+                    {
+                        "description": "Power of Attorney, notarised",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Deed of Assignment (if the inventor and applicant are different), notarised",
+                        "prof_fee": "Yes",
+                        "comm_fee": "Yes",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Commercial Certificate (no notarization required if issued by official foreign registry)",
+                        "prof_fee": "Yes",
+                        "comm_fee": "No",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "description": "Certified priority application to be submitted only if requested by the Patent Office in a notice to submit missing documents (within 90 days from the date of the notice, to be issued shortly after filing).",
+                        "prof_fee": "",
+                        "comm_fee": "",
+                        "indiv_fee": ""
+                    },
+                    {
+                        "type": "note",
+                        "content": "Timeline for filing formality documents and Arabic translation of specification and drawings : Within 90 days from the date of notice to submit missing documents."
+                    }
+                ]
+            }
+        ]
+    }
+}

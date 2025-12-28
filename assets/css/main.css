@@ -1,0 +1,195 @@
+:root {
+    --bg-dark: #0a0e14;
+    --bg-card: rgba(255, 255, 255, 0.05);
+    --primary-purple: #5b2080;
+    --primary-green: #096e4a;
+    --primary-petrol: #007f9c;
+    --text-main: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --font-family: 'Inter', Calibri, Tahoma, sans-serif;
+    /* Calibri is official, Inter as modern fallback */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.glass {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #1a2433 0%, #0a0e14 100%);
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #fff, var(--primary-petrol));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 3rem;
+}
+
+.map-container {
+    width: 100%;
+    height: 600px;
+    margin-top: 2rem;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+.country-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.country-card {
+    padding: 2rem;
+    border-radius: 16px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.country-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-petrol);
+}
+
+.country-card h3 {
+    color: var(--primary-petrol);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.country-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Detail Page Styles */
+.detail-header {
+    padding: 6rem 1rem 3rem;
+    text-align: center;
+    background: linear-gradient(to bottom, #111a27, var(--bg-dark));
+}
+
+.section-title {
+    color: var(--primary-petrol);
+    margin: 3rem 0 1.5rem;
+    font-size: 2rem;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 0.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+th {
+    background: rgba(0, 127, 156, 0.1);
+    color: var(--primary-petrol);
+    text-align: left;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--glass-border);
+    font-size: 0.95rem;
+}
+
+tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.note {
+    background: rgba(91, 32, 128, 0.1);
+    border-left: 3px solid var(--primary-purple);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    color: #d1b3e6;
+}
+
+.back-btn {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-in {
+    animation: fadeIn 0.8s ease forwards;
+}

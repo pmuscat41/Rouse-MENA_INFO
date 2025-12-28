@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rouse | Middle East & Africa Geographic Hub</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1 class="animate-in">Middle East & Africa</h1>
+        <p class="subtitle animate-in" style="animation-delay: 0.2s">Explore patent and design requirements across the
+            region through our interactive geographic hub.</p>
+
+        <div class="container" style="width: 100%">
+            <div class="map-container glass animate-in" style="animation-delay: 0.4s">
+                <div id="map"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="country-grid" class="country-grid">
+            <!-- Country cards will be injected here -->
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 4rem; color: var(--text-muted); font-size: 0.8rem;">
+        &copy; 2025 Rouse. All rights reserved. Identical wording preserved from official fee schedules.
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const map = L.map('map', {
+                center: [15, 30],
+                zoom: 3,
+                zoomControl: false,
+                attributionControl: false
+            });
+
+            // Dark mode map tiles
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                maxZoom: 19
+            }).addTo(map);
+
+            // Load GeoJSON and Data
+            try {
+                const [geoRes, dataRes] = await Promise.all([
+                    fetch('assets/data/countries.geo.json'),
+                    fetch('assets/data/data.json')
+                ]);
+                const geoData = await geoRes.json();
+                const countryData = await dataRes.json();
+
+                const countriesInScope = Object.keys(countryData);
+
+                // Add GeoJSON to map
+                L.geoJSON(geoData, {
+                    style: (feature) => {
+                        const inScope = countriesInScope.includes(feature.properties.name);
+                        return {
+                            fillColor: inScope ? '#007f9c' : '#333',
+                            weight: 1,
+                            opacity: 1,
+                            color: 'white',
+                            fillOpacity: inScope ? 0.6 : 0.1
+                        };
+                    },
+                    onEachFeature: (feature, layer) => {
+                        if (countriesInScope.includes(feature.properties.name)) {
+                            layer.on('click', () => {
+                                window.location.href = `country-detail.html?country=${encodeURIComponent(feature.properties.name)}`;
+                            });
+                            layer.on('mouseover', function () {
+                                this.setStyle({ fillOpacity: 0.9, weight: 2 });
+                            });
+                            layer.on('mouseout', function () {
+                                this.setStyle({ fillOpacity: 0.6, weight: 1 });
+                            });
+                        }
+                    }
+                }).addTo(map);
+
+                // Populate Grid
+                const grid = document.getElementById('country-grid');
+                countriesInScope.forEach((name, index) => {
+                    const card = document.createElement('a');
+                    card.className = 'country-card glass animate-in';
+                    card.style.animationDelay = `${0.1 * index}s`;
+                    card.href = `country-detail.html?country=${encodeURIComponent(name)}`;
+                    card.innerHTML = `
+                        <h3>${name}</h3>
+                        <p>View patent & design fee schedules and documentary requirements.</p>
+                    `;
+                    grid.appendChild(card);
+                });
+
+            } catch (err) {
+                console.error('Error loading data:', err);
+            }
+        });
+    </script>
+</body>
+
+</html>
