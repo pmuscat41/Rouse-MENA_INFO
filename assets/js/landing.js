@@ -4,6 +4,14 @@
  * the grid only.
  */
 (async function () {
+  // Update relative-year placeholders before any async work runs.
+  // Use this attribute on any element whose text should reflect "current
+  // year minus 1997" (years of MEA patent practice, established Dubai 1997).
+  const yearsSince1997 = new Date().getFullYear() - 1997;
+  document.querySelectorAll('[data-years-since-1997]').forEach(el => {
+    el.textContent = yearsSince1997;
+  });
+
   const grid       = document.getElementById('rs-grid');
   const countEl    = document.getElementById('rs-count');
   const titleEl    = document.getElementById('rs-grid-title');
