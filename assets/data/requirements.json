@@ -1,0 +1,1508 @@
+{
+  "countries": [
+    {
+      "id": "algeria",
+      "name": "Algeria",
+      "region": "africa",
+      "iso_numeric": "012",
+      "iso_alpha3": "DZA",
+      "office": "National Institute of Industrial Property (INAPI)",
+      "filing_language": "Arabic / French",
+      "routes": [
+        "Paris",
+        "PCT National Phase"
+      ],
+      "last_verified": "2025-01-31",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Specification and Drawings In Arabic",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "Arabic or French",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Power of Attorney",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Simply signed",
+          "translation": "Arabic or French",
+          "deadline": "Within two months from filing"
+        },
+        {
+          "document": "Deed of Assignment",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Simply signed",
+          "translation": "Arabic or French",
+          "deadline": "Within two months from filing"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "Priority application",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Certified",
+          "translation": "Arabic or French",
+          "deadline": "Within three months from filing"
+        },
+        {
+          "document": "PCT document(s)",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        }
+      ],
+      "information_required": [
+        "Applicant's, name, address and nationality",
+        "Inventor(s)'s name address and nationality, if different from the applicant",
+        "Specification and Drawings In English",
+        "Priority application date and number",
+        "PCT application date and number"
+      ],
+      "coverage": "National"
+    },
+    {
+      "id": "bahrain",
+      "name": "Bahrain",
+      "region": "mideast",
+      "iso_numeric": "048",
+      "iso_alpha3": "BHR",
+      "office": "Industrial Property Office, Ministry of Industry, Commerce and Tourism",
+      "filing_language": "Arabic (English accepted with translation)",
+      "routes": [
+        "Paris",
+        "PCT National Phase"
+      ],
+      "last_verified": "2026-01-01",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Specification and Drawings In Arabic",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "Arabic",
+          "deadline": "Within three months from filing"
+        },
+        {
+          "document": "Power of Attorney",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Certified by Apostille",
+          "translation": "English and in Arabic",
+          "deadline": "Within three months from filing"
+        },
+        {
+          "document": "Deed of Assignment",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Certified by Apostille",
+          "translation": "English and in Arabic",
+          "deadline": "Within three months from filing"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "Priority application",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "PCT document(s)",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        }
+      ],
+      "information_required": [
+        "Applicant's, name, address and nationality",
+        "Inventor(s)'s name address and nationality, if different from the applicant",
+        "Specification and Drawings In English",
+        "Priority application date and number",
+        "PCT application date and number"
+      ],
+      "coverage": "National"
+    },
+    {
+      "id": "djibouti",
+      "name": "Djibouti",
+      "region": "africa",
+      "iso_numeric": "262",
+      "iso_alpha3": "DJI",
+      "office": "Office Djiboutien de la Propriété Industrielle et Commerciale (ODPIC)",
+      "filing_language": "French",
+      "routes": [
+        "Paris",
+        "PCT National Phase"
+      ],
+      "last_verified": "2025-01-01",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Power of Attorney",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Simply signed",
+          "translation": "English copy sufficient",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Deed of Assignment",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Apostille or Legalised",
+          "translation": "English copy sufficient",
+          "deadline": "within one month from filing date"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "Priority application",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Certified",
+          "translation": "No",
+          "deadline": "within one month from filing date"
+        },
+        {
+          "document": "PCT document(s)",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        }
+      ],
+      "information_required": [
+        "Applicant's, name, address and nationality",
+        "Inventor(s)'s name address and nationality, if different from the applicant",
+        "Specification and Drawings In English",
+        "Priority application date and number",
+        "PCT application date and number"
+      ],
+      "coverage": "National"
+    },
+    {
+      "id": "egypt",
+      "name": "Egypt",
+      "region": "africa",
+      "iso_numeric": "818",
+      "iso_alpha3": "EGY",
+      "office": "Egyptian Patent Office",
+      "filing_language": "Arabic",
+      "routes": [
+        "Paris",
+        "PCT National Phase"
+      ],
+      "last_verified": "2026-01-01",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Specification and Drawings In Arabic",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "Arabic",
+          "deadline": "Within six months minus one day, from filing date"
+        },
+        {
+          "document": "Power of Attorney",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Legalized",
+          "translation": "English and in Arabic",
+          "deadline": "within four months from filing date"
+        },
+        {
+          "document": "Deed of Assignment",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "Priority application",
+          "required": "Yes, for convention application only",
+          "format": "Original",
+          "authentication": "Certified copy",
+          "translation": "English and in Arabic",
+          "deadline": "within four months from filing date"
+        },
+        {
+          "document": "PCT document(s)",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        }
+      ],
+      "information_required": [
+        "Applicant's, name, address and nationality",
+        "Inventor(s)'s name address and nationality, if different from the applicant",
+        "Specification and Drawings In English",
+        "Priority application date and number",
+        "PCT application date and number"
+      ],
+      "coverage": "National"
+    },
+    {
+      "id": "israel",
+      "name": "Israel",
+      "region": "mideast",
+      "iso_numeric": "376",
+      "iso_alpha3": "ISR",
+      "office": "Israel Patent Office (ILPO)",
+      "filing_language": "English / Hebrew",
+      "routes": [
+        "Paris",
+        "PCT National Phase"
+      ],
+      "last_verified": "2026-01-01",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Power of Attorney",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Simply signed",
+          "translation": "English",
+          "deadline": "within three months from filing date"
+        },
+        {
+          "document": "Deed of Assignment",
+          "required": "If requested by the Patent Office",
+          "format": "Original",
+          "authentication": "Simply signed",
+          "translation": "English",
+          "deadline": "within three months from filing date"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "Priority application",
+          "required": "Yes, If DAS code unavailable",
+          "format": "eCopy",
+          "authentication": "Certified copy",
+          "translation": "English",
+          "deadline": "within three months from filing date"
+        },
+        {
+          "document": "PCT document(s)",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        }
+      ],
+      "information_required": [
+        "Applicant's, name, address and nationality",
+        "Inventor(s)'s name address and nationality, if different from the applicant",
+        "Specification and Drawings In English",
+        "Priority application date and number",
+        "PCT application date and number"
+      ],
+      "coverage": "National"
+    },
+    {
+      "id": "kuwait",
+      "name": "Kuwait",
+      "region": "mideast",
+      "iso_numeric": "414",
+      "iso_alpha3": "KWT",
+      "office": "Trademarks and Patent Department, Ministry of Commerce and Industry",
+      "filing_language": "Arabic",
+      "routes": [
+        "Paris",
+        "PCT National Phase"
+      ],
+      "last_verified": "2026-01-01",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Specification and Drawings In Arabic",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "Arabic",
+          "deadline": "within three months from filing date"
+        },
+        {
+          "document": "Power of Attorney",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Legalised",
+          "translation": "In English and in Arabic",
+          "deadline": "within three months from filing date"
+        },
+        {
+          "document": "Deed of Assignment",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "Priority application",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "PCT document(s)",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        }
+      ],
+      "information_required": [
+        "Applicant's, name, address and nationality",
+        "Inventor(s)'s name address and nationality, if different from the applicant",
+        "Specification and Drawings In English",
+        "Priority application date and number",
+        "PCT application date and number"
+      ],
+      "coverage": "National"
+    },
+    {
+      "id": "libya",
+      "name": "Libya",
+      "region": "africa",
+      "iso_numeric": "434",
+      "iso_alpha3": "LBY",
+      "office": "Industrial Property Office (Trademarks and Patents Office)",
+      "filing_language": "Arabic",
+      "routes": [
+        "Paris",
+        "PCT National Phase"
+      ],
+      "last_verified": "2025-09-29",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Simple",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Specification and Drawings In Arabic",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Simple",
+          "translation": "Arabic",
+          "deadline": "Within two months from filing date"
+        },
+        {
+          "document": "Power of Attorney",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Legalised",
+          "translation": "English and in Arabic",
+          "deadline": "Within two months from filing date"
+        },
+        {
+          "document": "Deed of Assignment",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Legalised",
+          "translation": "English and in Arabic",
+          "deadline": "Within two months from filing date"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Legalised",
+          "translation": "English and in Arabic",
+          "deadline": "Within two months from filing date"
+        },
+        {
+          "document": "Priority application",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Legalised",
+          "translation": "English and in Arabic",
+          "deadline": "Within two months from filing date"
+        },
+        {
+          "document": "PCT Document",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        }
+      ],
+      "information_required": [
+        "Applicant's, name, address and nationality",
+        "Inventor(s)'s name address and nationality, if different from the applicant",
+        "Specification and Drawings In English",
+        "Priority application date and number",
+        "PCT application date and number"
+      ],
+      "coverage": "National"
+    },
+    {
+      "id": "morocco",
+      "name": "Morocco",
+      "region": "africa",
+      "iso_numeric": "504",
+      "iso_alpha3": "MAR",
+      "office": "Moroccan Office of Industrial and Commercial Property (OMPIC)",
+      "filing_language": "Arabic / French",
+      "routes": [
+        "Paris",
+        "PCT National Phase",
+        "EP Validation"
+      ],
+      "last_verified": "2025-01-21",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Specification and Drawings In Arabic or French",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "Arabic or French",
+          "deadline": "Within three months from filing date"
+        },
+        {
+          "document": "Power of Attorney",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Simply signed",
+          "translation": "English and Arabic/French",
+          "deadline": "Within three months from filing date"
+        },
+        {
+          "document": "Deed of Assignment",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "Priority application",
+          "required": "Yes, for convention application only",
+          "format": "Original",
+          "authentication": "Certified",
+          "translation": "English and Arabic/French",
+          "deadline": "Within three months from filing date"
+        },
+        {
+          "document": "PCT document(s)",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        }
+      ],
+      "information_required": [
+        "Applicant's, name, address and nationality",
+        "Inventor(s)'s name address and nationality, if different from the applicant",
+        "Specification and Drawings In English",
+        "Priority application date and number",
+        "PCT application date and number"
+      ],
+      "coverage": "National"
+    },
+    {
+      "id": "nigeria",
+      "name": "Nigeria",
+      "region": "africa",
+      "iso_numeric": "566",
+      "iso_alpha3": "NGA",
+      "office": "Trademarks, Patents and Designs Registry",
+      "filing_language": "English",
+      "routes": [
+        "Paris",
+        "PCT National Phase"
+      ],
+      "last_verified": "2025-01-01",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Power of attorney",
+          "required": "Yes",
+          "format": "original",
+          "authentication": "Simply signed",
+          "translation": "English",
+          "deadline": "Within three months from filing date"
+        },
+        {
+          "document": "Deed of assignment",
+          "required": "Yes",
+          "format": "original",
+          "authentication": "Simply signed",
+          "translation": "English",
+          "deadline": "Within three months from filing date"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "Priority application",
+          "required": "Yes, if not lodged in international phase",
+          "format": "original",
+          "authentication": "Certified",
+          "translation": "English",
+          "deadline": "Within three months from filing date"
+        },
+        {
+          "document": "PCT document(s)",
+          "required": "Yes, Publication, ISR, WO, IPRP",
+          "format": "eCopy",
+          "authentication": "Simple copy",
+          "translation": "English",
+          "deadline": "Within three months from filing date"
+        }
+      ],
+      "information_required": [
+        "Applicant's, name, address and nationality",
+        "Inventor(s)'s name address and nationality, if different from the applicant",
+        "Specification and Drawings In English",
+        "Priority application date and number",
+        "PCT application date and number"
+      ],
+      "coverage": "National"
+    },
+    {
+      "id": "oman",
+      "name": "Oman",
+      "region": "mideast",
+      "iso_numeric": "512",
+      "iso_alpha3": "OMN",
+      "office": "Ministry of Commerce, Industry and Investment Promotion",
+      "filing_language": "Arabic (English accepted with translation)",
+      "routes": [
+        "Paris",
+        "PCT National Phase"
+      ],
+      "last_verified": "2026-01-01",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Specification and Drawings In Arabic",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "Arabic",
+          "deadline": "Within 90 days from filing date"
+        },
+        {
+          "document": "Power of Attorney",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Apostille",
+          "translation": "English",
+          "deadline": "within 60 days from filing date"
+        },
+        {
+          "document": "Deed of Assignment",
+          "required": "Yes, if applicant and inventors are different",
+          "format": "Original",
+          "authentication": "Apostille",
+          "translation": "English",
+          "deadline": "Within 90 days from filing date"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Simple copy",
+          "translation": "English",
+          "deadline": "Within 90 days from filing date"
+        },
+        {
+          "document": "Priority application",
+          "required": "Yes, for convention application only",
+          "format": "Original",
+          "authentication": "Certified copy",
+          "translation": "English",
+          "deadline": "Within 90 days from filing date"
+        },
+        {
+          "document": "PCT Document",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        }
+      ],
+      "information_required": [
+        "Applicant's, name, address and nationality",
+        "Inventor(s)'s name address and nationality, if different from the applicant",
+        "Specification and Drawings In English",
+        "Priority application date and number",
+        "PCT application date and number"
+      ],
+      "coverage": "National"
+    },
+    {
+      "id": "qatar",
+      "name": "Qatar",
+      "region": "mideast",
+      "iso_numeric": "634",
+      "iso_alpha3": "QAT",
+      "office": "Industrial Property Department, Ministry of Commerce and Industry",
+      "filing_language": "Arabic",
+      "routes": [
+        "Paris",
+        "PCT National Phase"
+      ],
+      "last_verified": "2026-01-01",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Specification and Drawings In Arabic",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "Arabic",
+          "deadline": "Within three months from filing date"
+        },
+        {
+          "document": "Power of Attorney",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Legalized",
+          "translation": "English and in Arabic",
+          "deadline": "within six months from filing date"
+        },
+        {
+          "document": "Deed of Assignment",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "Priority application",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Certified copy",
+          "translation": "English and in Arabic",
+          "deadline": "Within three months from filing date"
+        },
+        {
+          "document": "Copy of PCT application (if not in English)",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        }
+      ],
+      "information_required": [
+        "Applicant's name, address and nationality",
+        "Inventor(s)'s name, address and nationality",
+        "Specification and Drawings In English",
+        "Priority application date and number",
+        "PCT application date and number"
+      ],
+      "coverage": "National"
+    },
+    {
+      "id": "saudi-arabia",
+      "name": "Saudi Arabia",
+      "region": "mideast",
+      "iso_numeric": "682",
+      "iso_alpha3": "SAU",
+      "office": "Saudi Authority for Intellectual Property (SAIP)",
+      "filing_language": "Arabic",
+      "routes": [
+        "Paris",
+        "PCT National Phase"
+      ],
+      "last_verified": "2026-01-01",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Simple",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Specification and Drawings In Arabic",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Simple",
+          "translation": "Arabic",
+          "deadline": "within 60 Hijri days from filing or in response to formal examination report"
+        },
+        {
+          "document": "Power of Attorney",
+          "required": "Yes",
+          "format": "eCopy sufficient for filing, original may be required if requested",
+          "authentication": "Certified by Apostille",
+          "translation": "English and in Arabic",
+          "deadline": "within 60 Hijri days from filing or in response to formal examination report"
+        },
+        {
+          "document": "Deed of Assignment",
+          "required": "Yes, for convention application only, if appicant and inventor are different",
+          "format": "eCopy sufficient for filing, original may be required if requested",
+          "authentication": "Certified by Apostille",
+          "translation": "English and in Arabic",
+          "deadline": "within 60 Hijri days from filing or in response to formal examination report"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "Priority application",
+          "required": "Yes, for convention application only",
+          "format": "eCopy",
+          "authentication": "Certified copy",
+          "translation": "English and in Arabic",
+          "deadline": "within 60 Hijri days from filing or in response to formal examination report"
+        },
+        {
+          "document": "PCT Document",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        }
+      ],
+      "information_required": [
+        "Applicant's, name, address and nationality",
+        "Inventor(s)'s name address and nationality, if different from the applicant",
+        "Specification and Drawings In English",
+        "Priority application date and number",
+        "PCT application date and number"
+      ],
+      "coverage": "National"
+    },
+    {
+      "id": "south-africa",
+      "name": "South Africa",
+      "region": "africa",
+      "iso_numeric": "710",
+      "iso_alpha3": "ZAF",
+      "office": "Companies and Intellectual Property Commission (CIPC)",
+      "filing_language": "English",
+      "routes": [
+        "Paris",
+        "PCT National Phase"
+      ],
+      "last_verified": "2025-01-01",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Power of attorney",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Simply signed",
+          "translation": "English",
+          "deadline": "Within six months from filing date"
+        },
+        {
+          "document": "Form P26",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Simply signed",
+          "translation": "English",
+          "deadline": "Within six months from filing date"
+        },
+        {
+          "document": "Deed of assignment",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Simply signed",
+          "translation": "English",
+          "deadline": "Within six months from filing date"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "Priority application",
+          "required": "Yes, if not lodged in international phase",
+          "format": "eCopy",
+          "authentication": "Certified",
+          "translation": "English",
+          "deadline": "Within six months from filing date"
+        },
+        {
+          "document": "PCT application (Publication, ISR, WO, IPRP)",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        }
+      ],
+      "information_required": [
+        "Applicant's, name, address and nationality",
+        "Inventor(s)'s name address and nationality, if different from the applicant",
+        "Specification and Drawings In English",
+        "Priority application date and number",
+        "PCT application date and number"
+      ],
+      "coverage": "National"
+    },
+    {
+      "id": "tunisia",
+      "name": "Tunisia",
+      "region": "africa",
+      "iso_numeric": "788",
+      "iso_alpha3": "TUN",
+      "office": "National Institute for Standardization and Industrial Property (INNORPI)",
+      "filing_language": "Arabic / French",
+      "routes": [
+        "Paris",
+        "PCT National Phase",
+        "EP Validation"
+      ],
+      "last_verified": "2025-09-29",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Simple copy",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Specification and Drawings In Arabic",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Simple copy",
+          "translation": "Arabic",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Power of Attorney",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Simply signed",
+          "translation": "English and in Arabic",
+          "deadline": "Within one month from filing date"
+        },
+        {
+          "document": "Deed of Assignment",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "Priority application",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        },
+        {
+          "document": "PCT Document",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        }
+      ],
+      "information_required": [
+        "Applicant's, name, address and nationality",
+        "Inventor(s)'s name address and nationality, if different from the applicant",
+        "Specification and Drawings In English",
+        "Priority application date and number",
+        "PCT application date and number"
+      ],
+      "coverage": "National"
+    },
+    {
+      "id": "turkey",
+      "name": "Turkey",
+      "region": "mideast",
+      "iso_numeric": "792",
+      "iso_alpha3": "TUR",
+      "office": "Turkish Patent and Trademark Office (TÜRKPATENT)",
+      "filing_language": "Turkish",
+      "routes": [
+        "Paris",
+        "PCT National Phase",
+        "EP Validation"
+      ],
+      "last_verified": "2025-01-01",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Specification and Drawings In Turkish",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "Turkish",
+          "deadline": "Within two months from the filing date"
+        },
+        {
+          "document": "Power of Attorney",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Simply signed",
+          "translation": "English and in Turkish",
+          "deadline": "Within two months from the filing date"
+        },
+        {
+          "document": "Deed of Assignment",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Certified by Apostille",
+          "translation": "English and in Turkish",
+          "deadline": "Within two months from the filing date"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Simple copy",
+          "translation": "English and in Turkish",
+          "deadline": "Within two months from the filing date"
+        },
+        {
+          "document": "Priority application",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Certified",
+          "translation": "English and in Turkish",
+          "deadline": "Within two months from the filing date"
+        },
+        {
+          "document": "PCT document(s)",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        }
+      ],
+      "information_required": [
+        "Applicant's, name, address and nationality",
+        "Inventor(s)'s name address and nationality, if different from the applicant",
+        "Specification and Drawings In English",
+        "Priority application date and number",
+        "PCT application date and number"
+      ],
+      "coverage": "National"
+    },
+    {
+      "id": "uae",
+      "name": "United Arab Emirates",
+      "region": "mideast",
+      "iso_numeric": "784",
+      "iso_alpha3": "ARE",
+      "office": "UAE Ministry of Economy",
+      "filing_language": "English (Arabic translation required)",
+      "routes": [
+        "Paris",
+        "PCT National Phase"
+      ],
+      "last_verified": "2026-01-01",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "PCT request",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Simple copy",
+          "translation": "From WIPO",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Specification and Drawings In Arabic",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "Arabic",
+          "deadline": "Within 90 days from the date of an amendment order"
+        },
+        {
+          "document": "Power of Attorney",
+          "required": "Yes",
+          "format": "Original if legalised, eCopy if notarised",
+          "authentication": "Legalized copy recommended, however, notarized is sufficient to meet requirements",
+          "translation": "English copy sufficient",
+          "deadline": "Within 90 days from the date of an amendment order"
+        },
+        {
+          "document": "Deed of Assignment",
+          "required": "Yes, if the applicant and inventors are different",
+          "format": "eCopy",
+          "authentication": "Notarised",
+          "translation": "English copy sufficient",
+          "deadline": "Within 90 days from the date of an amendment order"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Simple copy issued by Official Registry",
+          "translation": "English copy sufficient",
+          "deadline": "Within 90 days from the date of an amendment order"
+        },
+        {
+          "document": "Priority application",
+          "required": "If requested by Patent Office",
+          "format": "eCopy",
+          "authentication": "Certified copy",
+          "translation": "English copy sufficient",
+          "deadline": "Within 90 days from the date of an amendment order"
+        },
+        {
+          "document": "PCT document(s)",
+          "required": "If requested by Patent Office",
+          "format": "eCopy",
+          "authentication": "Simple copy",
+          "translation": "English copy sufficient",
+          "deadline": "Within 90 days from the date of an amendment order"
+        }
+      ],
+      "information_required": [
+        "Applicant's name and address and nationality and email address",
+        "Inventor(s)'s name address and nationality",
+        "Specification and Drawings in English",
+        "Priority application date and number",
+        "PCT application date and number, and PCT request form"
+      ],
+      "coverage": "National"
+    }
+  ],
+  "regional_systems": [
+    {
+      "id": "aripo",
+      "name": "ARIPO",
+      "long_name": "African Regional Intellectual Property Organisation",
+      "region": "africa",
+      "host_office_country": "Zimbabwe",
+      "host_office_city": "Harare",
+      "host_coordinates": [
+        31.0335,
+        -17.8252
+      ],
+      "member_states_count": 22,
+      "treaty": "Harare Protocol",
+      "filing_language": "English",
+      "coverage": "Regional",
+      "last_verified": "2026-01-01",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Power of attorney",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Simply signed",
+          "translation": "English",
+          "deadline": "Within two months from filing date"
+        },
+        {
+          "document": "Deed of assignment",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Simply signed",
+          "translation": "English",
+          "deadline": "Within four months from filing date"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "simple copy",
+          "translation": "English",
+          "deadline": "None"
+        },
+        {
+          "document": "Priority application",
+          "required": "Yes, if not lodged in international phase",
+          "format": "eCopy",
+          "authentication": "Certified",
+          "translation": "English",
+          "deadline": "Within three months from filing date"
+        },
+        {
+          "document": "PCT document(s)",
+          "required": "Yes, Publication, ISR, WO, IPRP",
+          "format": "eCopy",
+          "authentication": "simple copy",
+          "translation": "English",
+          "deadline": "None"
+        }
+      ],
+      "information_required": [
+        "Applicant's, name, address and nationality",
+        "Inventor(s)'s name address and nationality, if different from the applicant",
+        "Specification and Drawings In English",
+        "Priority application date and number",
+        "PCT application date and number"
+      ]
+    },
+    {
+      "id": "gcc",
+      "name": "GCC Patent Office",
+      "long_name": "Gulf Cooperation Council Patent Office",
+      "region": "mideast",
+      "host_office_country": "Saudi Arabia",
+      "host_office_city": "Riyadh",
+      "host_coordinates": [
+        46.6753,
+        24.7136
+      ],
+      "member_states_count": 6,
+      "treaty": "GCC Patent Regulation",
+      "filing_language": "Arabic",
+      "coverage": "Regional",
+      "last_verified": "2025-01-01",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Simple",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Specification and Drawings In Arabic",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Simple",
+          "translation": "Arabic",
+          "deadline": "within three months from filing date or formal examination report, whichever expires later"
+        },
+        {
+          "document": "Power of Attorney",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Legalised upto any GCC member state",
+          "translation": "English and in Arabic",
+          "deadline": "within three months from filing date or formal examination report, whichever expires later"
+        },
+        {
+          "document": "Deed of Assignment",
+          "required": "Yes, if appicant and inventor are different",
+          "format": "Original",
+          "authentication": "Legalised upto any GCC member state",
+          "translation": "English and in Arabic",
+          "deadline": "within three months from filing date or formal examination report, whichever expires later"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Legalised upto any GCC member state",
+          "translation": "English and in Arabic",
+          "deadline": "within three months from filing date or formal examination report, whichever expires later"
+        },
+        {
+          "document": "Priority application",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Certified",
+          "translation": "English and in Arabic",
+          "deadline": "within 60 Hijri days from filing or in response to formal examination report"
+        },
+        {
+          "document": "PCT Document",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        }
+      ],
+      "information_required": [
+        "Applicant's, name, address and nationality",
+        "Inventor(s)'s name address and nationality, if different from the applicant",
+        "Specification and Drawings In English",
+        "Priority application date and number",
+        "PCT application date and number"
+      ]
+    },
+    {
+      "id": "oapi",
+      "name": "OAPI",
+      "long_name": "Organisation Africaine de la Propriété Intellectuelle",
+      "region": "africa",
+      "host_office_country": "Cameroon",
+      "host_office_city": "Yaoundé",
+      "host_coordinates": [
+        11.5021,
+        3.848
+      ],
+      "member_states_count": 17,
+      "treaty": "Bangui Agreement",
+      "filing_language": "French",
+      "coverage": "Regional",
+      "last_verified": "2025-01-01",
+      "formality_documents": [
+        {
+          "document": "Specification and Drawings In English",
+          "required": "Yes",
+          "format": "eCopy",
+          "authentication": "Not applicable",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Power of attorney",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Simply signed",
+          "translation": "English",
+          "deadline": "Within three months from filing date"
+        },
+        {
+          "document": "Deed of assignment",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Simply signed",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Commercial Certificate",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Simply signed",
+          "translation": "English",
+          "deadline": "On filing"
+        },
+        {
+          "document": "Priority application",
+          "required": "Yes",
+          "format": "Original",
+          "authentication": "Certified",
+          "translation": "English",
+          "deadline": "Within six months from filing date"
+        },
+        {
+          "document": "PCT document(s)",
+          "required": "No",
+          "format": "Not applicable",
+          "authentication": "Not applicable",
+          "translation": "Not applicable",
+          "deadline": "Not applicable"
+        }
+      ],
+      "information_required": [
+        "Applicant's, name, address and nationality",
+        "Inventor(s)'s name address and nationality, if different from the applicant",
+        "Specification and Drawings In English",
+        "Priority application date and number",
+        "PCT application date and number"
+      ]
+    }
+  ],
+  "metadata": {
+    "last_generated": "2026-05-01T13:23:57Z",
+    "source": "INTA/Price_Lists/*.xlsx",
+    "version": "1.0"
+  }
+}

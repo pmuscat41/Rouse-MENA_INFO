@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="rs-title">Loading… | Rouse MEA Patent Filing Hub</title>
+  <link rel="icon" type="image/png" href="assets/img/rouse-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <header class="rs-header">
+    <a href="index.html" class="rs-logo" aria-label="Rouse — return to hub">
+      <img src="assets/img/rouse-logo.png" alt="Rouse" width="120" height="32">
+    </a>
+    <nav class="rs-nav">
+      <a href="index.html#jurisdictions">Jurisdictions</a>
+      <a href="index.html#regional">Regional systems</a>
+      <a href="index.html#about">About</a>
+      <a href="register.html" class="rs-cta">Request fees</a>
+    </nav>
+  </header>
+
+  <main class="rs-page">
+    <nav class="rs-crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Hub</a>
+      <span class="rs-crumb-sep">›</span>
+      <a id="rs-region-link" href="#"></a>
+      <span class="rs-crumb-sep">›</span>
+      <span id="rs-country-name"></span>
+    </nav>
+
+    <div class="rs-title-row">
+      <h1 class="rs-h1" id="rs-h1"></h1>
+      <span class="rs-meta" id="rs-verified"></span>
+    </div>
+
+    <p class="rs-sub" id="rs-sub"></p>
+
+    <div class="rs-keyfacts" id="rs-keyfacts"></div>
+
+    <div class="rs-section-head">
+      <p class="rs-section-title">Formality documents</p>
+      <span class="rs-section-aside" id="rs-aside"></span>
+    </div>
+
+    <div class="rs-table-wrap">
+      <table class="rs-table">
+        <colgroup>
+          <col style="width: 22%;">
+          <col style="width: 14%;">
+          <col style="width: 9%;">
+          <col style="width: 17%;">
+          <col style="width: 12%;">
+          <col style="width: 26%;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Document</th>
+            <th>Required?</th>
+            <th>Format</th>
+            <th>Authentication</th>
+            <th>Translation</th>
+            <th>Deadline</th>
+          </tr>
+        </thead>
+        <tbody id="rs-rows"></tbody>
+      </table>
+    </div>
+
+    <div class="rs-info-block">
+      <p class="rs-info-head">Information required on filing</p>
+      <ul class="rs-info-list" id="rs-info-list"></ul>
+    </div>
+
+    <section class="rs-cta-bar">
+      <div class="rs-cta-text">
+        <strong id="rs-cta-title">Request the fee schedule</strong>
+        <span>Professional, official and translation costs sent on request to verified agents.</span>
+      </div>
+      <a id="rs-cta-link" href="register.html" class="rs-cta-btn">Request access →</a>
+    </section>
+
+    <div class="rs-foot-nav">
+      <a id="rs-prev" class="rs-foot-link" hidden></a>
+      <a id="rs-next" class="rs-foot-link" hidden></a>
+    </div>
+  </main>
+
+  <footer class="rs-foot">
+    <span>© Rouse 2026 · Information only, not legal advice</span>
+    <span>Last updated <span id="rs-updated">—</span></span>
+  </footer>
+
+  <script src="assets/js/shared.js"></script>
+  <script src="assets/js/country.js"></script>
+</body>
+</html>

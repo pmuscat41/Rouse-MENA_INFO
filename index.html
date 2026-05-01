@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rouse | Middle East &amp; Africa Patent Filing Hub</title>
+  <meta name="description" content="Patent filing requirements across the Middle East and Africa, prepared and verified by Rouse's regional team.">
+  <link rel="icon" type="image/png" href="assets/img/rouse-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <header class="rs-header">
+    <a href="index.html" class="rs-logo" aria-label="Rouse — return to hub">
+      <img src="assets/img/rouse-logo.png" alt="Rouse" width="120" height="32">
+    </a>
+    <nav class="rs-nav">
+      <a href="#jurisdictions">Jurisdictions</a>
+      <a href="#regional">Regional systems</a>
+      <a href="#about">About</a>
+      <a href="register.html" class="rs-cta">Request fees</a>
+    </nav>
+  </header>
+
+  <section class="rs-hero">
+    <p class="rs-eyebrow">Patent filing hub</p>
+    <h1 class="rs-h1">Middle East &amp; Africa</h1>
+    <p class="rs-sub">Patent filing requirements across the Middle East and Africa, prepared and verified by Rouse's regional team. Click any jurisdiction to see what's needed and when.</p>
+  </section>
+
+  <div class="rs-tabs" id="rs-tabs" role="tablist">
+    <button class="rs-tab active" data-region="mideast" role="tab" aria-selected="true">Middle East</button>
+    <button class="rs-tab" data-region="africa" role="tab" aria-selected="false">Africa</button>
+  </div>
+
+  <div class="rs-mapwrap">
+    <div id="rs-map"></div>
+    <div id="rs-tip" class="rs-tip"></div>
+    <div class="rs-mlegend">
+      <div class="rs-leg-item"><span class="rs-leg-sw" style="background:#096e4a;"></span><span>Covered jurisdiction</span></div>
+      <div class="rs-leg-item"><span class="rs-leg-sw" style="background:#E8E3DA;"></span><span>Other</span></div>
+      <div class="rs-leg-item"><span class="rs-leg-sw rs-leg-regional"></span><span>Regional system</span></div>
+    </div>
+  </div>
+
+  <section id="jurisdictions" class="rs-grid-section">
+    <div class="rs-grid-head">
+      <h2 id="rs-grid-title">Middle East jurisdictions</h2>
+      <span class="rs-count" id="rs-count">Loading…</span>
+    </div>
+    <div id="rs-grid" class="rs-grid"></div>
+  </section>
+
+  <section class="rs-cta-bar">
+    <div class="rs-cta-text">
+      <strong>Request the MEA fee schedules</strong>
+      <span>Foreign agents register once and we send the schedules direct.</span>
+    </div>
+    <a href="register.html" class="rs-cta-btn">Request access →</a>
+  </section>
+
+  <footer class="rs-foot">
+    <span>© Rouse 2026 · Information only, not legal advice</span>
+    <span>Last updated <span id="rs-updated">—</span></span>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script src="assets/js/shared.js"></script>
+  <script src="assets/js/landing.js"></script>
+</body>
+</html>

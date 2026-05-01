@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting to registration | Rouse MEA Patent Filing Hub</title>
+  <link rel="icon" type="image/png" href="assets/img/rouse-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <header class="rs-header">
+    <a href="index.html" class="rs-logo" aria-label="Rouse — return to hub">
+      <img src="assets/img/rouse-logo.png" alt="Rouse" width="120" height="32">
+    </a>
+    <nav class="rs-nav">
+      <a href="index.html#jurisdictions">Jurisdictions</a>
+      <a href="index.html#regional">Regional systems</a>
+      <a href="index.html#about">About</a>
+    </nav>
+  </header>
+
+  <main class="rs-page rs-redirect">
+    <div class="rs-spinner" aria-hidden="true"></div>
+    <p class="rs-redirect-msg">Taking you to the registration form…</p>
+    <p class="rs-redirect-fallback">
+      <a id="rs-manual" href="#">Click here</a> if you are not redirected automatically.
+    </p>
+  </main>
+
+  <footer class="rs-foot">
+    <span>© Rouse 2026 · Information only, not legal advice</span>
+  </footer>
+
+  <script>
+    /*
+     * Microsoft Forms registration URL.
+     *
+     * To pre-fill a question (e.g. "Jurisdictions of interest") with the
+     * country the user clicked from a country page:
+     *   1. In Microsoft Forms, go to "Collect responses → Customise the link"
+     *      OR submit a test response and inspect the URL — each question has
+     *      a parameter ID like 'r123abc456'.
+     *   2. Append it here: FORM_URL + '&r123abc456=' + encodeURIComponent(name)
+     *   3. Look up the country name from requirements.json using the ?country=
+     *      query value before redirecting.
+     */
+    const FORM_URL = 'https://forms.office.com/Pages/ResponsePage.aspx?id=BqcmxiOKJ0CwHt8gurVp12-E5ZR1EPhJrM0aR-ITrWlURFZDMDZHRlFQS1JNNVk0TDFXTEpXRldLRyQlQCN0PWcu';
+
+    document.getElementById('rs-manual').href = FORM_URL;
+    setTimeout(() => window.location.replace(FORM_URL), 1000);
+  </script>
+</body>
+</html>

@@ -1,7 +1,9 @@
-# Rouse MEA Patent & Design Filing Hub
+# Rouse MEA Patent Filing Hub
 ## Build Specification for AI Agent
 
-> **Purpose of this document:** Complete instructions for an AI coding agent (Claude Code) to build the Rouse Middle East & Africa patent and design filing directory as a static site hosted on GitHub Pages. The site exposes filing requirements publicly; pricelists are gated behind a Microsoft Forms registration that emails the Rouse team.
+> **Purpose of this document:** Complete instructions for an AI coding agent (Claude Code) to build the Rouse Middle East & Africa **patent** filing directory as a static site hosted on GitHub Pages. The site exposes filing requirements publicly; pricelists are gated behind a Microsoft Forms registration that emails the Rouse team.
+>
+> **Scope: patents only.** This hub publishes patent filing requirements. Rouse also files industrial designs across the same MEA jurisdictions and is recognised for that practice, but design fee schedules and formality requirements are out of scope for this site and can be requested directly via the registration form.
 
 ---
 
@@ -28,7 +30,7 @@
 
 ### 1.1 What this is
 
-A public directory of patent and design filing requirements across 25+ Middle East and Africa jurisdictions, hosted on GitHub Pages from the repository `pmuscat41/Rouse-MENA_INFO`. The site is a marketing and lead-generation tool for Rouse's MEA patent team.
+A public directory of **patent** filing requirements across the Middle East and Africa jurisdictions for which Rouse maintains pricelists, hosted on GitHub Pages from the repository `pmuscat41/Rouse-MENA_INFO`. The site is a marketing and lead-generation tool for Rouse's MEA patent team. Designs filing is a separate Rouse capability and is not published here — agents can request design information through the same registration form.
 
 ### 1.2 What it isn't
 
@@ -471,11 +473,12 @@ Hero entry point. Communicates regional scope, lets users navigate to a specific
 │  [ROUSE wordmark]    Jurisdictions  Regional  About  Request fees │
 ├─────────────────────────────────────────────────────────┤
 │                                                         │
-│         PATENT & DESIGN FILING HUB                      │
+│              PATENT FILING HUB                          │
 │                                                         │
 │              Middle East & Africa                       │
 │                                                         │
-│   Filing requirements across 25+ jurisdictions,         │
+│   Patent filing requirements across the Middle         │
+│   East and Africa, prepared and verified by Rouse.     │
 │   prepared and verified by Rouse's regional team.       │
 │                                                         │
 ├─────────────────────────────────────────────────────────┤
@@ -564,9 +567,9 @@ The complete working mockup is provided in section 7.7. The agent should treat t
   </header>
 
   <section class="rs-hero">
-    <p class="rs-eyebrow">Patent &amp; design filing hub</p>
+    <p class="rs-eyebrow">Patent filing hub</p>
     <h1 class="rs-h1">Middle East &amp; Africa</h1>
-    <p class="rs-sub">Filing requirements across 25+ jurisdictions, prepared and verified by Rouse's regional team. Click any country on the map to see what's needed and when.</p>
+    <p class="rs-sub">Patent filing requirements across the Middle East and Africa, prepared and verified by Rouse's regional team. Click any jurisdiction on the map to see what's needed and when.</p>
   </section>
 
   <div class="rs-tabs" id="rs-tabs">
@@ -661,7 +664,7 @@ Single-country deep-view showing filing requirements, key facts, and a country-s
 │                                                         │
 │  Hub › Middle East › United Arab Emirates               │
 │                                                         │
-│  United Arab Emirates — patents & designs   Last verified: ... │
+│  United Arab Emirates — patent filing       Last verified: ... │
 │                                                         │
 │  Filing requirements at the UAE Ministry of Economy...  │
 │                                                         │
@@ -866,7 +869,7 @@ fetch('assets/data/requirements.json')
 
 function renderCountry(c, all) {
   document.title = `${c.name} | Rouse MEA Filing Hub`;
-  document.getElementById('rs-h1').textContent = `${c.name} — patents & designs`;
+  document.getElementById('rs-h1').textContent = `${c.name} — patent filing`;
   document.getElementById('rs-country-name').textContent = c.name;
   document.getElementById('rs-verified').textContent = `Last verified: ${formatDate(c.last_verified)}`;
   document.getElementById('rs-sub').textContent = subFor(c);
@@ -1003,7 +1006,7 @@ The Rouse user (Patrick) will create the Microsoft Form manually. The agent does
 | Country of practice | Short text | Yes |
 | Role | Single choice (Foreign agent / In-house counsel / Other) | Yes |
 | Jurisdictions of interest | Multi-choice (list every country + "All MEA") | Yes |
-| IP types | Multi-choice (Patents / Designs / Both) | Yes |
+| IP types | Multi-choice (Patents — default; Designs — optional, since this hub is patent-focused) | Yes |
 | What are you working on? | Long text | No |
 | Privacy consent | Yes/No | Yes |
 
