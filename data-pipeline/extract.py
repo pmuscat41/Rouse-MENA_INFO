@@ -84,6 +84,9 @@ COUNTRIES: dict[str, dict] = {
         "office": "Industrial Property Office, Ministry of Industry, Commerce and Tourism",
         "filing_language": "Arabic (English accepted with translation)",
         "routes": ["Paris", "PCT National Phase"],
+        # Bahrain isn't in the world-atlas geo file at this resolution
+        # (island state, 785 km²) — front-end falls back to a marker.
+        "fallback_coordinates": [50.5860, 26.2235],  # Manama [lon, lat]
     },
     "kuwait": {
         "id": "kuwait",

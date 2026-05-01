@@ -213,8 +213,44 @@ function initMap(data) {
         window.location.href = `country.html?id=${coveredById[d.id].id}`;
       });
 
-    // Regional markers (purple)
+    // Country fallback markers (green) for covered countries whose polygon
+    // isn't in the geo dataset (e.g. Bahrain — island, too small at this
+    // resolution). Plus regional system markers (purple).
     gMarkers.selectAll('*').remove();
+
+    const renderedIds = new Set(features.map(f => f.id));
+    const fallbackCountries = data.countries.filter(c =>
+      c.region === region
+      && c.iso_alpha3
+      && !renderedIds.has(c.iso_alpha3)
+      && Array.isArray(c.fallback_coordinates)
+    );
+    fallbackCountries.forEach(c => {
+      const p = proj(c.fallback_coordinates);
+      if (!p) return;
+      const grp = gMarkers.append('g')
+        .attr('transform', `translate(${p[0]},${p[1]})`)
+        .style('cursor', 'pointer')
+        .on('click', () => window.location.href = `country.html?id=${c.id}`)
+        .on('mouseover', function () {
+          tip.textContent = c.name;
+          tip.classList.add('visible');
+        })
+        .on('mousemove', function (e) {
+          const rect = mapEl.getBoundingClientRect();
+          tip.style.left = (e.clientX - rect.left + 12) + 'px';
+          tip.style.top = (e.clientY - rect.top - 30) + 'px';
+        })
+        .on('mouseout', function () {
+          tip.classList.remove('visible');
+        });
+      grp.append('circle')
+        .attr('r', 6)
+        .attr('fill', '#096e4a')
+        .attr('stroke', '#FAFBFC')
+        .attr('stroke-width', 1.5);
+    });
+
     const markers = regionalByRegion[region] || [];
     markers.forEach(r => {
       if (!r.host_coordinates) return;

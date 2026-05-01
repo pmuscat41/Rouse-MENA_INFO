@@ -92,6 +92,10 @@
         "Paris",
         "PCT National Phase"
       ],
+      "fallback_coordinates": [
+        50.586,
+        26.2235
+      ],
       "last_verified": "2026-01-01",
       "formality_documents": [
         {
@@ -1501,7 +1505,7 @@
     }
   ],
   "metadata": {
-    "last_generated": "2026-05-01T13:23:57Z",
+    "last_generated": "2026-05-01T15:05:55Z",
     "source": "INTA/Price_Lists/*.xlsx",
     "version": "1.0"
   }

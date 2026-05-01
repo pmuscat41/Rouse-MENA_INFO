@@ -365,6 +365,62 @@ html, body {
   letter-spacing: 0.04em;
 }
 
+/* ---- Contact us ---- */
+.rs-contact {
+  max-width: var(--container-max);
+  margin: 32px auto 8px;
+  padding: 0 var(--container-padding);
+}
+.rs-contact-head { margin-bottom: 22px; }
+.rs-contact-h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--rouse-grey-dark);
+  margin: 8px 0 0;
+  line-height: 1.3;
+}
+.rs-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.rs-contact-card {
+  display: block;
+  background: var(--neutral-card);
+  border: 1px solid var(--neutral-border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  color: var(--rouse-grey-dark);
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.rs-contact-card:hover {
+  border-color: var(--rouse-green);
+  background: var(--green-tint-10);
+  text-decoration: none;
+}
+.rs-contact-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--rouse-petrol);
+  margin-bottom: 6px;
+}
+.rs-contact-value {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--rouse-grey-dark);
+  word-break: break-all;
+}
+@media (max-width: 700px) {
+  .rs-contact-grid { grid-template-columns: 1fr; }
+  .rs-contact-h2 { font-size: 18px; }
+  .rs-contact-value { font-size: 16px; }
+}
+
 /* ---- Save or share (QR codes) ---- */
 .rs-share {
   max-width: var(--container-max);
