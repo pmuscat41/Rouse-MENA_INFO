@@ -365,19 +365,16 @@ html, body {
   letter-spacing: 0.04em;
 }
 
-/* ---- Save or share (QR) ---- */
+/* ---- Save or share (QR codes) ---- */
 .rs-share {
   max-width: var(--container-max);
   margin: 32px auto;
-  padding: 28px var(--container-padding);
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 32px;
-  align-items: center;
+  padding: 32px var(--container-padding);
   border-top: 1px solid var(--neutral-border);
   border-bottom: 1px solid var(--neutral-border);
+  text-align: center;
 }
-.rs-share-text { max-width: 620px; }
+.rs-share-head { max-width: 640px; margin: 0 auto 28px; }
 .rs-share-h2 {
   font-size: 22px;
   font-weight: 700;
@@ -385,18 +382,19 @@ html, body {
   margin: 8px 0 12px;
   line-height: 1.3;
 }
-.rs-share-text p {
+.rs-share-head p {
   color: var(--rouse-grey-mid);
   font-size: 15px;
-  margin: 0 0 8px;
+  margin: 0;
 }
-.rs-share-text p:last-child { margin-bottom: 0; }
-.rs-share-url a {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--rouse-petrol);
-  word-break: break-all;
+
+.rs-qr-row {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 40px;
+  justify-content: center;
 }
+.rs-qr-card { margin: 0; }
 .rs-qr {
   display: block;
   background: #fff;
@@ -405,13 +403,26 @@ html, body {
   border-radius: 8px;
   width: 180px;
   height: 180px;
+  margin: 0 auto 12px;
 }
+.rs-qr-card figcaption strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--rouse-grey-dark);
+  margin-bottom: 4px;
+}
+.rs-qr-url {
+  display: block;
+  font-size: 11px;
+  color: var(--rouse-grey-mid);
+  word-break: break-all;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
 @media (max-width: 700px) {
-  .rs-share {
-    grid-template-columns: 1fr;
-    text-align: center;
-    justify-items: center;
-  }
+  .rs-qr-row { grid-template-columns: 1fr; gap: 28px; }
 }
 
 /* ---- CTA bar ---- */
