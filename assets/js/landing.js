@@ -129,8 +129,16 @@ function initMap(data) {
   const svg = d3.select(mapEl).append('svg')
     .attr('viewBox', `0 0 ${W} ${H}`)
     .attr('preserveAspectRatio', 'xMidYMid meet');
-  const gCountries = svg.append('g');
-  const gMarkers = svg.append('g');
+  const gBase    = svg.append('g');   // back layer: uncovered countries
+  const gCovered = svg.append('g');   // top layer: covered countries (hover/click)
+  const gMarkers = svg.append('g');   // regional + fallback dots
+  const gLabels  = svg.append('g').attr('pointer-events', 'none');
+
+  // Three-shade green palette. The map_shade key (1/2/3) on each country
+  // is a 4-colour-theorem coloring across adjoining covered jurisdictions
+  // so neighbours read distinct.
+  const SHADES = { 1: '#096e4a', 2: '#0e8a5b', 3: '#054930' };
+  const HOVER_FILL = '#022218';
 
   const coveredById = {};
   data.countries.forEach(c => {
@@ -142,25 +150,34 @@ function initMap(data) {
     if (regionalByRegion[r.region]) regionalByRegion[r.region].push(r);
   });
 
-  // Bounding boxes (lon/lat). Middle East extended west to lon 25 to fit
-  // Turkey alongside the Gulf states.
+  // Bounding boxes (lon/lat). Middle East stretched west to fit Turkey
+  // alongside the Gulf states; keepBounds is wider than the bbox so we
+  // include border-overlap polygons (Iran, Egypt etc.) as background.
   const regions = {
     mideast: {
-      bbox: { type: 'Polygon', coordinates: [[[25, 42], [60, 42], [60, 11], [25, 11], [25, 42]]] }
+      bbox: { type: 'Polygon', coordinates: [[[26, 42], [60, 42], [60, 12], [26, 12], [26, 42]]] },
+      keepBounds: { minLon: 18, maxLon: 68, minLat: 5, maxLat: 48 }
     },
     africa: {
-      bbox: { type: 'Polygon', coordinates: [[[-20, 38], [55, 38], [55, -36], [-20, -36], [-20, 38]]] }
+      bbox: { type: 'Polygon', coordinates: [[[-20, 38], [55, 38], [55, -36], [-20, -36], [-20, 38]]] },
+      keepBounds: { minLon: -25, maxLon: 60, minLat: -40, maxLat: 40 }
     }
   };
 
   let features = null;
+  let centroids = null;
   let pendingRegion = null;
-  let lastRegion = null;
 
   fetch('assets/data/countries.geo.json')
     .then(r => r.json())
     .then(geo => {
       features = geo.features;
+      // Pre-compute geographic centroids for region-based filtering.
+      centroids = {};
+      features.forEach(f => {
+        try { centroids[f.id] = d3.geoCentroid(f); }
+        catch (e) { centroids[f.id] = null; }
+      });
       if (pendingRegion) draw(pendingRegion);
     })
     .catch(err => {
@@ -169,32 +186,58 @@ function initMap(data) {
     });
 
   function draw(region) {
-    if (!features) {
-      pendingRegion = region;
-      return;
-    }
-    if (!regions[region]) {
-      svg.style('display', 'none');
-      return;
-    }
+    if (!features) { pendingRegion = region; return; }
+    if (!regions[region]) { svg.style('display', 'none'); return; }
     svg.style('display', '');
-    lastRegion = region;
+
     const cfg = regions[region];
     const proj = d3.geoMercator().fitExtent([[12, 12], [W - 12, H - 12]], cfg.bbox);
     const path = d3.geoPath(proj);
 
-    const sel = gCountries.selectAll('path').data(features, d => d.id);
-    sel.exit().remove();
-    sel.enter().append('path')
-      .merge(sel)
+    // Filter to features whose centroid sits within the region's
+    // geographic envelope. This drops Bermuda, Pacific islands etc.,
+    // whose tiny polygons project to giant invalid shapes when fit to
+    // a small bbox and would otherwise cover the visible map.
+    const visible = features.filter(f => {
+      if (coveredById[f.id]) return true;          // never drop a covered country
+      const c = centroids[f.id];
+      if (!c) return false;
+      const [lon, lat] = c;
+      const b = cfg.keepBounds;
+      return lon >= b.minLon && lon <= b.maxLon && lat >= b.minLat && lat <= b.maxLat;
+    });
+
+    // A country is "covered" only on its own region tab — UAE on the
+    // Middle East view is green and labeled, on the Africa view it just
+    // sits as background grey. Same for Egypt etc. crossing the other way.
+    const isCoveredHere = (id) => {
+      const c = coveredById[id];
+      return c && c.region === region;
+    };
+    const baseFeatures = visible.filter(f => !isCoveredHere(f.id));
+    const coveredFeatures = visible.filter(f => isCoveredHere(f.id));
+
+    // Base layer (uncovered, non-interactive)
+    const base = gBase.selectAll('path').data(baseFeatures, d => d.id);
+    base.exit().remove();
+    base.enter().append('path').merge(base)
       .attr('d', path)
-      .attr('fill', d => coveredById[d.id] ? '#096e4a' : '#E8E3DA')
+      .attr('fill', '#E8E3DA')
       .attr('stroke', '#FAFBFC')
       .attr('stroke-width', 0.5)
-      .style('cursor', d => coveredById[d.id] ? 'pointer' : 'default')
+      .style('pointer-events', 'none');
+
+    // Covered layer (interactive, on top of base)
+    const cov = gCovered.selectAll('path').data(coveredFeatures, d => d.id);
+    cov.exit().remove();
+    cov.enter().append('path').merge(cov)
+      .attr('d', path)
+      .attr('fill', d => SHADES[coveredById[d.id].map_shade] || SHADES[1])
+      .attr('stroke', '#FAFBFC')
+      .attr('stroke-width', 0.8)
+      .style('cursor', 'pointer')
       .on('mouseover', function (e, d) {
-        if (!coveredById[d.id]) return;
-        d3.select(this).attr('fill', '#054930');
+        d3.select(this).attr('fill', HOVER_FILL);
         tip.textContent = coveredById[d.id].name;
         tip.classList.add('visible');
       })
@@ -204,18 +247,14 @@ function initMap(data) {
         tip.style.top = (e.clientY - r.top - 30) + 'px';
       })
       .on('mouseout', function (e, d) {
-        if (!coveredById[d.id]) return;
-        d3.select(this).attr('fill', '#096e4a');
+        d3.select(this).attr('fill', SHADES[coveredById[d.id].map_shade] || SHADES[1]);
         tip.classList.remove('visible');
       })
       .on('click', function (e, d) {
-        if (!coveredById[d.id]) return;
         window.location.href = `country.html?id=${coveredById[d.id].id}`;
       });
 
-    // Country fallback markers (green) for covered countries whose polygon
-    // isn't in the geo dataset (e.g. Bahrain — island, too small at this
-    // resolution). Plus regional system markers (purple).
+    // Markers (regional systems + fallback dots for missing-polygon countries)
     gMarkers.selectAll('*').remove();
 
     const renderedIds = new Set(features.map(f => f.id));
@@ -241,12 +280,10 @@ function initMap(data) {
           tip.style.left = (e.clientX - rect.left + 12) + 'px';
           tip.style.top = (e.clientY - rect.top - 30) + 'px';
         })
-        .on('mouseout', function () {
-          tip.classList.remove('visible');
-        });
+        .on('mouseout', function () { tip.classList.remove('visible'); });
       grp.append('circle')
         .attr('r', 6)
-        .attr('fill', '#096e4a')
+        .attr('fill', SHADES[c.map_shade] || SHADES[1])
         .attr('stroke', '#FAFBFC')
         .attr('stroke-width', 1.5);
     });
@@ -269,9 +306,7 @@ function initMap(data) {
           tip.style.left = (e.clientX - rect.left + 12) + 'px';
           tip.style.top = (e.clientY - rect.top - 30) + 'px';
         })
-        .on('mouseout', function () {
-          tip.classList.remove('visible');
-        });
+        .on('mouseout', function () { tip.classList.remove('visible'); });
       grp.append('circle').attr('r', 7).attr('fill', '#5b2080').attr('stroke', 'white').attr('stroke-width', 2);
       grp.append('circle').attr('r', 11).attr('fill', 'none').attr('stroke', '#5b2080').attr('stroke-width', 1.5).attr('opacity', 0.5);
       grp.append('text')
@@ -281,6 +316,46 @@ function initMap(data) {
         .attr('font-weight', 700)
         .attr('fill', '#5b2080')
         .text((r.id || '').toUpperCase());
+    });
+
+    // Country labels — drawn last so they sit on top of everything.
+    gLabels.selectAll('*').remove();
+    coveredFeatures.forEach(f => {
+      const c = coveredById[f.id];
+      const centre = path.centroid(f);
+      if (!isFinite(centre[0]) || !isFinite(centre[1])) return;
+      const label = c.map_label || c.name;
+      const fontSize = label.length > 8 ? 9 : 10;
+      gLabels.append('text')
+        .attr('x', centre[0])
+        .attr('y', centre[1])
+        .attr('text-anchor', 'middle')
+        .attr('dominant-baseline', 'middle')
+        .attr('font-size', fontSize)
+        .attr('font-weight', 700)
+        .attr('fill', '#FAFBFC')
+        .attr('paint-order', 'stroke')
+        .attr('stroke', '#04362e')
+        .attr('stroke-width', 2.5)
+        .attr('stroke-linejoin', 'round')
+        .text(label);
+    });
+    // Labels for fallback-marker countries (e.g. Bahrain)
+    fallbackCountries.forEach(c => {
+      const p = proj(c.fallback_coordinates);
+      if (!p) return;
+      gLabels.append('text')
+        .attr('x', p[0])
+        .attr('y', p[1] - 12)
+        .attr('text-anchor', 'middle')
+        .attr('font-size', 9)
+        .attr('font-weight', 700)
+        .attr('fill', '#FAFBFC')
+        .attr('paint-order', 'stroke')
+        .attr('stroke', '#04362e')
+        .attr('stroke-width', 2.5)
+        .attr('stroke-linejoin', 'round')
+        .text(c.map_label || c.name);
     });
   }
 

@@ -3,6 +3,8 @@
     {
       "id": "algeria",
       "name": "Algeria",
+      "map_label": "Algeria",
+      "map_shade": 1,
       "region": "africa",
       "iso_numeric": "012",
       "iso_alpha3": "DZA",
@@ -83,6 +85,8 @@
     {
       "id": "bahrain",
       "name": "Bahrain",
+      "map_label": "Bahrain",
+      "map_shade": 2,
       "region": "mideast",
       "iso_numeric": "048",
       "iso_alpha3": "BHR",
@@ -167,6 +171,8 @@
     {
       "id": "djibouti",
       "name": "Djibouti",
+      "map_label": "Djibouti",
+      "map_shade": 1,
       "region": "africa",
       "iso_numeric": "262",
       "iso_alpha3": "DJI",
@@ -239,6 +245,8 @@
     {
       "id": "egypt",
       "name": "Egypt",
+      "map_label": "Egypt",
+      "map_shade": 1,
       "region": "africa",
       "iso_numeric": "818",
       "iso_alpha3": "EGY",
@@ -319,6 +327,8 @@
     {
       "id": "israel",
       "name": "Israel",
+      "map_label": "Israel",
+      "map_shade": 1,
       "region": "mideast",
       "iso_numeric": "376",
       "iso_alpha3": "ISR",
@@ -391,6 +401,8 @@
     {
       "id": "kuwait",
       "name": "Kuwait",
+      "map_label": "Kuwait",
+      "map_shade": 2,
       "region": "mideast",
       "iso_numeric": "414",
       "iso_alpha3": "KWT",
@@ -471,6 +483,8 @@
     {
       "id": "libya",
       "name": "Libya",
+      "map_label": "Libya",
+      "map_shade": 3,
       "region": "africa",
       "iso_numeric": "434",
       "iso_alpha3": "LBY",
@@ -551,6 +565,8 @@
     {
       "id": "morocco",
       "name": "Morocco",
+      "map_label": "Morocco",
+      "map_shade": 2,
       "region": "africa",
       "iso_numeric": "504",
       "iso_alpha3": "MAR",
@@ -632,6 +648,8 @@
     {
       "id": "nigeria",
       "name": "Nigeria",
+      "map_label": "Nigeria",
+      "map_shade": 1,
       "region": "africa",
       "iso_numeric": "566",
       "iso_alpha3": "NGA",
@@ -704,6 +722,8 @@
     {
       "id": "oman",
       "name": "Oman",
+      "map_label": "Oman",
+      "map_shade": 3,
       "region": "mideast",
       "iso_numeric": "512",
       "iso_alpha3": "OMN",
@@ -784,6 +804,8 @@
     {
       "id": "qatar",
       "name": "Qatar",
+      "map_label": "Qatar",
+      "map_shade": 2,
       "region": "mideast",
       "iso_numeric": "634",
       "iso_alpha3": "QAT",
@@ -864,6 +886,8 @@
     {
       "id": "saudi-arabia",
       "name": "Saudi Arabia",
+      "map_label": "Saudi Arabia",
+      "map_shade": 1,
       "region": "mideast",
       "iso_numeric": "682",
       "iso_alpha3": "SAU",
@@ -944,6 +968,8 @@
     {
       "id": "south-africa",
       "name": "South Africa",
+      "map_label": "South Africa",
+      "map_shade": 1,
       "region": "africa",
       "iso_numeric": "710",
       "iso_alpha3": "ZAF",
@@ -1024,6 +1050,8 @@
     {
       "id": "tunisia",
       "name": "Tunisia",
+      "map_label": "Tunisia",
+      "map_shade": 2,
       "region": "africa",
       "iso_numeric": "788",
       "iso_alpha3": "TUN",
@@ -1105,6 +1133,8 @@
     {
       "id": "turkey",
       "name": "Turkey",
+      "map_label": "Turkey",
+      "map_shade": 1,
       "region": "mideast",
       "iso_numeric": "792",
       "iso_alpha3": "TUR",
@@ -1186,6 +1216,8 @@
     {
       "id": "uae",
       "name": "United Arab Emirates",
+      "map_label": "UAE",
+      "map_shade": 2,
       "region": "mideast",
       "iso_numeric": "784",
       "iso_alpha3": "ARE",
@@ -1505,7 +1537,7 @@
     }
   ],
   "metadata": {
-    "last_generated": "2026-05-01T15:05:55Z",
+    "last_generated": "2026-05-01T15:30:45Z",
     "source": "INTA/Price_Lists/*.xlsx",
     "version": "1.0"
   }

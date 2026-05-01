@@ -55,9 +55,13 @@ LOG_FILE = SCRIPT_DIR / "extract.log"
 
 COUNTRIES: dict[str, dict] = {
     # Middle East
+    # map_shade values 1/2/3 use the 4-colour-theorem to vary green tone for
+    # adjoining covered countries so neighbours read distinct.
     "uae": {
         "id": "uae",
         "name": "United Arab Emirates",
+        "map_label": "UAE",
+        "map_shade": 2,
         "region": "mideast",
         "iso_numeric": "784",
         "iso_alpha3": "ARE",
@@ -68,6 +72,8 @@ COUNTRIES: dict[str, dict] = {
     "saudi arabia": {
         "id": "saudi-arabia",
         "name": "Saudi Arabia",
+        "map_label": "Saudi Arabia",
+        "map_shade": 1,
         "region": "mideast",
         "iso_numeric": "682",
         "iso_alpha3": "SAU",
@@ -78,6 +84,8 @@ COUNTRIES: dict[str, dict] = {
     "bahrain": {
         "id": "bahrain",
         "name": "Bahrain",
+        "map_label": "Bahrain",
+        "map_shade": 2,
         "region": "mideast",
         "iso_numeric": "048",
         "iso_alpha3": "BHR",
@@ -91,6 +99,8 @@ COUNTRIES: dict[str, dict] = {
     "kuwait": {
         "id": "kuwait",
         "name": "Kuwait",
+        "map_label": "Kuwait",
+        "map_shade": 2,
         "region": "mideast",
         "iso_numeric": "414",
         "iso_alpha3": "KWT",
@@ -101,6 +111,8 @@ COUNTRIES: dict[str, dict] = {
     "oman": {
         "id": "oman",
         "name": "Oman",
+        "map_label": "Oman",
+        "map_shade": 3,
         "region": "mideast",
         "iso_numeric": "512",
         "iso_alpha3": "OMN",
@@ -111,6 +123,8 @@ COUNTRIES: dict[str, dict] = {
     "qatar": {
         "id": "qatar",
         "name": "Qatar",
+        "map_label": "Qatar",
+        "map_shade": 2,
         "region": "mideast",
         "iso_numeric": "634",
         "iso_alpha3": "QAT",
@@ -121,6 +135,8 @@ COUNTRIES: dict[str, dict] = {
     "israel": {
         "id": "israel",
         "name": "Israel",
+        "map_label": "Israel",
+        "map_shade": 1,
         "region": "mideast",
         "iso_numeric": "376",
         "iso_alpha3": "ISR",
@@ -133,6 +149,8 @@ COUNTRIES: dict[str, dict] = {
     "algeria": {
         "id": "algeria",
         "name": "Algeria",
+        "map_label": "Algeria",
+        "map_shade": 1,
         "region": "africa",
         "iso_numeric": "012",
         "iso_alpha3": "DZA",
@@ -143,6 +161,8 @@ COUNTRIES: dict[str, dict] = {
     "djibouti": {
         "id": "djibouti",
         "name": "Djibouti",
+        "map_label": "Djibouti",
+        "map_shade": 1,
         "region": "africa",
         "iso_numeric": "262",
         "iso_alpha3": "DJI",
@@ -153,6 +173,8 @@ COUNTRIES: dict[str, dict] = {
     "egypt": {
         "id": "egypt",
         "name": "Egypt",
+        "map_label": "Egypt",
+        "map_shade": 1,
         "region": "africa",
         "iso_numeric": "818",
         "iso_alpha3": "EGY",
@@ -163,6 +185,8 @@ COUNTRIES: dict[str, dict] = {
     "libya": {
         "id": "libya",
         "name": "Libya",
+        "map_label": "Libya",
+        "map_shade": 3,
         "region": "africa",
         "iso_numeric": "434",
         "iso_alpha3": "LBY",
@@ -173,6 +197,8 @@ COUNTRIES: dict[str, dict] = {
     "morocco": {
         "id": "morocco",
         "name": "Morocco",
+        "map_label": "Morocco",
+        "map_shade": 2,
         "region": "africa",
         "iso_numeric": "504",
         "iso_alpha3": "MAR",
@@ -183,6 +209,8 @@ COUNTRIES: dict[str, dict] = {
     "nigeria": {
         "id": "nigeria",
         "name": "Nigeria",
+        "map_label": "Nigeria",
+        "map_shade": 1,
         "region": "africa",
         "iso_numeric": "566",
         "iso_alpha3": "NGA",
@@ -193,6 +221,8 @@ COUNTRIES: dict[str, dict] = {
     "south africa": {
         "id": "south-africa",
         "name": "South Africa",
+        "map_label": "South Africa",
+        "map_shade": 1,
         "region": "africa",
         "iso_numeric": "710",
         "iso_alpha3": "ZAF",
@@ -203,6 +233,8 @@ COUNTRIES: dict[str, dict] = {
     "tunisia": {
         "id": "tunisia",
         "name": "Tunisia",
+        "map_label": "Tunisia",
+        "map_shade": 2,
         "region": "africa",
         "iso_numeric": "788",
         "iso_alpha3": "TUN",
@@ -216,6 +248,8 @@ COUNTRIES: dict[str, dict] = {
     "turkey": {
         "id": "turkey",
         "name": "Turkey",
+        "map_label": "Turkey",
+        "map_shade": 1,
         "region": "mideast",
         "iso_numeric": "792",
         "iso_alpha3": "TUR",
