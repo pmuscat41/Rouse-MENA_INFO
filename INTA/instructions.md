@@ -322,65 +322,107 @@ Six required string fields plus optional `confidence`:
 
 ## 6. Brand & design system
 
+> **Source of truth:** Rouse Brand Guideline 2025 (`archive/Rouse Guide - Branding.pdf`, 28 pages). All values below are taken from that document. Do not invent or substitute colours.
+
 ### 6.1 Colour palette
 
-The Rouse logo is a multi-colour wordmark using the following hex values (extracted from the official logo):
+**Primary colours** (per brand guide p.12):
+
+| Token | Hex | RGB | Pantone | Usage |
+|---|---|---|---|---|
+| `--rouse-purple` | `#5b2080` | 91-32-128 | 2597 C | Primary brand colour. CTA backgrounds, regional system markers, eyebrow text. |
+| `--rouse-green` | `#096e4a` | 9-110-74 | 349 C | Map fill for covered countries, success/confirmation accents. |
+| `--rouse-petrol` | `#007f9c` | 0-127-156 | 3145 C | Section headings, table header text, links and active states. |
+
+**Secondary colours** (per brand guide p.12):
+
+| Token | Hex | RGB | Pantone | Usage |
+|---|---|---|---|---|
+| `--rouse-orange` | `#d74021` | 215-64-34 | 7597 C | Soft accent for highlights, last-verified pill background. |
+| `--rouse-red` | `#ac162c` | 172-22-44 | 187 C | Conditional pills (`Yes, if …`) — replaces the made-up "magenta" referenced in earlier drafts. |
+| `--rouse-grey-dark` | `#232222` | — | Neutral Black C | Body text. |
+| `--rouse-grey-mid` | `#706F6F` | 112-111-111 | — | Secondary text, captions, footer (matches email-signature spec, brand guide p.23). |
+
+**Tints.** Each primary colour has 80 / 60 / 40 / 20 % tints in the brand guide. For UI use derive these in CSS rather than hardcoding:
+- 20% tint of green (light fill backgrounds): `rgba(9,110,74,0.20)` or pre-mixed `#cee2da`
+- 20% tint of purple (regional marker halo): `rgba(91,32,128,0.20)`
+- 20% tint of red (conditional pill background): `rgba(172,22,44,0.10)`
+
+**Neutrals (site-only, not in brand guide):**
 
 | Token | Hex | Usage |
 |---|---|---|
-| `--rouse-teal` | `#0F6E56` | Primary brand colour. CTAs, active states, covered countries on map. |
-| `--rouse-teal-deep` | `#04342C` | Hover states, dark CTA backgrounds. |
-| `--rouse-teal-mint` | `#E1F5EE` | Light fills on dark CTA backgrounds, soft highlights. |
-| `--rouse-magenta` | `#A8226A` | Accent for conditional/contingent values (e.g. "if applicant ≠ inventor"). |
-| `--rouse-purple` | `#6B2A89` | Regional system markers, "information required" panel accent, eyebrow text. |
-| `--rouse-teal-blue` | `#1B5E6E` | Secondary teal, used in the wordmark for letter "U". |
 | `--neutral-bg` | `#FAFBFC` | Page background. |
 | `--neutral-card` | `#FFFFFF` | Card and panel background. |
 | `--neutral-sand` | `#FAF9F6` | Soft grouping background. |
-| `--neutral-border` | `rgba(15,110,86,0.18)` | Default border (teal at 18% opacity). |
-| `--neutral-text` | `#1C1C1C` | Body text. |
-| `--neutral-muted` | `#6C6C6C` | Secondary text. |
-| `--neutral-faint` | `#888888` | Tertiary text, footer. |
-| `--map-other` | `#E8E3DA` | Non-covered country fill on map. |
+| `--neutral-border` | `rgba(9,110,74,0.18)` | Default border (green at 18% opacity). |
+| `--map-other` | `#E8E3DA` | Non-covered country fill on the map. |
 
-### 6.2 The wordmark
+### 6.2 The wordmark — asset, not CSS
 
-The Rouse "ROUSE" wordmark is a multi-colour treatment with each letter coloured independently:
+The Rouse "ROUSE" wordmark is a multi-colour treatment of **three overlapping geometric blocks** of purple (`#5b2080`), green (`#096e4a`) and petrol (`#007f9c`) bleeding through every letter — **not** five solidly-coloured letters. The brand guide (p.9) explicitly forbids:
 
-- **R** = teal (`#0F6E56`)
-- **O** = magenta (`#A8226A`)
-- **U** = teal-blue (`#1B5E6E`)
-- **S** = purple (`#6B2A89`)
-- **E** = teal (`#0F6E56`)
+- Outlining, stretching, squeezing, or rotating the logo
+- Changing the 3 primary colours
+- Recreating the logo as a single colour
+- Integrating the logo with copy
 
-The user will provide an SVG of the official logo. Until then, recreate the wordmark in CSS for the site header:
+This means the wordmark **must be embedded as a vector asset**, not synthesised in CSS or HTML.
+
+**Asset placement and usage:**
 
 ```html
-<div class="rs-logo">
-  <span style="color: #0F6E56;">R</span><span style="color: #A8226A;">O</span><span style="color: #1B5E6E;">U</span><span style="color: #6B2A89;">S</span><span style="color: #0F6E56;">E</span>
-</div>
+<a href="index.html" class="rs-logo" aria-label="Rouse — return to hub">
+  <img src="assets/img/rouse-logo.svg" alt="Rouse" width="120" height="32">
+</a>
 ```
 
 ```css
-.rs-logo {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  font-size: 22px;
-  letter-spacing: 0.06em;
+.rs-logo img {
+  display: block;
+  height: 32px;
+  width: auto;
 }
 ```
 
-When the SVG arrives, swap the CSS version for `<img src="assets/img/rouse-logo.svg" alt="Rouse">`.
+**Three logo variants** are defined in the brand guide (p.6):
+- **Primary logo** (3-colour) — for white / light backgrounds. Use this in the site header.
+- **Black & white logo** — for dark or busy backgrounds. Optional, only if a dark CTA bar uses the wordmark.
+- **Favicon** — the "R" glyph alone with the same 3-colour treatment. Use as `favicon.ico` / `favicon.svg`.
+
+**Asset status (2026-05):**
+- `INTA/Price_Lists/Rouse_Logo.png` (existing PNG) is the only logo asset currently in the repo.
+- Patrick to provide the official SVG. Until then, copy the PNG to `assets/img/rouse-logo.png` and reference it; switch the `<img src>` to `.svg` once supplied.
+- The earlier draft of this spec proposed a per-letter CSS recreation (R=teal, O=magenta, U=teal-blue, S=purple, E=teal). **That approach is wrong on three counts** — magenta is not in the brand, the colours quoted are not Rouse hexes, and the design isn't a per-letter solid-fill treatment. Do not use it.
 
 ### 6.3 Typography
 
-- **Font family:** Roboto (Google Fonts), weights 400 / 500 / 700
-- **Body:** 13-14px, weight 400, line-height 1.55
-- **H1 (page title):** 22-26px, weight 500
-- **H2 (section title):** 13-16px, weight 500
-- **Eyebrow text:** 10-11px, uppercase, letter-spacing 0.1em, weight 500, often coloured purple
-- **Table cells:** 11-12px, weight 400
-- **Table headers:** 10px, uppercase, letter-spacing 0.04em, weight 500, teal text on light teal background
+Per brand guide p.10, the brand typeface is **Calibri** for all print and digital communications, with **Aptos** for PowerPoint and **Tahoma** as a fallback when Calibri isn't available.
+
+For a static GitHub-Pages site served to foreign agents on every OS, Calibri is not licensable as a webfont. Use **Carlito** (an OFL-licensed, metric-compatible Calibri clone hosted on Google Fonts) as the primary web face, and let the cascade fall back to Calibri on Windows machines and Tahoma everywhere else.
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
+```
+
+```css
+:root {
+  --font-body: 'Carlito', 'Calibri', 'Aptos', 'Tahoma', sans-serif;
+}
+body { font-family: var(--font-body); }
+```
+
+**Type scale:**
+
+- **Body:** 14px, weight 400, line-height 1.55, colour `#232222`
+- **H1 (page title):** 24-28px, weight 700, colour `#232222`
+- **H2 (section title):** 14-16px, weight 700, colour `#007f9c` (petrol)
+- **Eyebrow text:** 11px, uppercase, letter-spacing 0.1em, weight 700, colour `#5b2080` (purple)
+- **Table cells:** 12px, weight 400, colour `#232222`
+- **Table headers:** 10px, uppercase, letter-spacing 0.04em, weight 700, petrol text on a 10%-green tint background
+- **Captions / muted text:** 12px, weight 400, colour `#706F6F` (grey-mid)
+
+Carlito only ships 400 and 700 — no 500 weight. Use 700 wherever the earlier draft of this spec called for "weight 500".
 
 ### 6.4 Layout principles
 
@@ -392,7 +434,7 @@ When the SVG arrives, swap the CSS version for `<img src="assets/img/rouse-logo.
 
 ### 6.5 Pills and badges
 
-Status pills follow this pattern:
+Status pills follow this pattern, using **brand colours only**:
 
 ```css
 .rs-pill {
@@ -400,15 +442,16 @@ Status pills follow this pattern:
   font-size: 10px;
   padding: 2px 8px;
   border-radius: 4px;
-  font-weight: 500;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
-.rs-pill-yes { background: rgba(15,110,86,0.12); color: #0F6E56; }
-.rs-pill-cond { background: rgba(168,34,106,0.10); color: #A8226A; }
-.rs-pill-no { background: #f0ece5; color: #6c6c6c; }
+.rs-pill-yes  { background: rgba(9,110,74,0.12);   color: #096e4a; }   /* Green */
+.rs-pill-cond { background: rgba(172,22,44,0.10);  color: #ac162c; }   /* Red — secondary */
+.rs-pill-no   { background: #f0ece5;               color: #706F6F; }   /* Grey-mid */
 ```
 
 - **Yes (green)** for unconditional yes
-- **Conditional (magenta)** for "Yes, if X" phrasing — anything starting with "Yes," followed by a comma
+- **Conditional (red)** for "Yes, if X" phrasing — anything starting with "Yes," followed by a comma. (Earlier drafts used magenta, which is not a Rouse brand colour. Replaced with secondary red `#ac162c`.)
 - **No (grey)** for "No" / "Not required"
 
 The colour gives instant visual signal of which rows have conditions to read carefully.
@@ -503,14 +546,15 @@ The complete working mockup is provided in section 7.7. The agent should treat t
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rouse | Middle East & Africa Patent Filing Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
   <header class="rs-header">
-    <div class="rs-logo">
-      <span style="color: #0F6E56;">R</span><span style="color: #A8226A;">O</span><span style="color: #1B5E6E;">U</span><span style="color: #6B2A89;">S</span><span style="color: #0F6E56;">E</span>
-    </div>
+    <a href="index.html" class="rs-logo" aria-label="Rouse — return to hub">
+      <img src="assets/img/rouse-logo.svg" alt="Rouse" width="120" height="32">
+    </a>
     <nav class="rs-nav">
       <a href="#jurisdictions">Jurisdictions</a>
       <a href="#regional">Regional systems</a>
@@ -534,7 +578,7 @@ The complete working mockup is provided in section 7.7. The agent should treat t
     <div id="rs-map"></div>
     <div id="rs-tip" class="rs-tip"></div>
     <div class="rs-mlegend">
-      <div class="rs-leg-item"><span class="rs-leg-sw" style="background:#0F6E56;"></span><span>Covered jurisdiction</span></div>
+      <div class="rs-leg-item"><span class="rs-leg-sw" style="background:#096e4a;"></span><span>Covered jurisdiction</span></div>
       <div class="rs-leg-item"><span class="rs-leg-sw" style="background:#E8E3DA;"></span><span>Other</span></div>
       <div class="rs-leg-item"><span class="rs-leg-sw rs-leg-regional"></span><span>Regional system</span></div>
     </div>
@@ -665,9 +709,9 @@ The table is the core artefact of this page. Column widths (sum to 100%):
 | Translation | 12% | Language name |
 | Deadline | 26% | Free text, often the longest cell |
 
-Header styling: 10px uppercase, letter-spacing 0.04em, weight 500, teal text (`#0F6E56`) on `rgba(15,110,86,0.08)` background.
+Header styling: 10px uppercase, letter-spacing 0.04em, weight 700, petrol text (`#007f9c`) on `rgba(9,110,74,0.10)` background (10% green tint, per §6.3).
 
-Body cells: 11px, weight 400, line-height 1.45, vertical-align top, word-wrap break-word.
+Body cells: 12px, weight 400, line-height 1.45, vertical-align top, word-wrap break-word, colour `#232222`.
 
 ### 8.5 Pill rendering rule
 
@@ -713,13 +757,14 @@ Footer links to the alphabetically previous and next countries within the same r
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="rs-title">Loading... | Rouse MEA Filing Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
   <header class="rs-header">
-    <a href="index.html" class="rs-logo">
-      <span style="color: #0F6E56;">R</span><span style="color: #A8226A;">O</span><span style="color: #1B5E6E;">U</span><span style="color: #6B2A89;">S</span><span style="color: #0F6E56;">E</span>
+    <a href="index.html" class="rs-logo" aria-label="Rouse — return to hub">
+      <img src="assets/img/rouse-logo.svg" alt="Rouse" width="120" height="32">
     </a>
     <nav class="rs-nav">
       <a href="index.html#jurisdictions">Jurisdictions</a>
@@ -897,8 +942,8 @@ The `register.html` page reads the `?country=` query parameter, looks up the cou
   <title>Redirecting to registration | Rouse MEA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: 'Roboto', sans-serif; text-align: center; padding: 80px 20px; color: #444; }
-    .spinner { display: inline-block; width: 32px; height: 32px; border: 3px solid #E1F5EE; border-top-color: #0F6E56; border-radius: 50%; animation: spin 0.8s linear infinite; }
+    body { font-family: 'Carlito', 'Calibri', 'Tahoma', sans-serif; text-align: center; padding: 80px 20px; color: #232222; }
+    .spinner { display: inline-block; width: 32px; height: 32px; border: 3px solid rgba(9,110,74,0.18); border-top-color: #096e4a; border-radius: 50%; animation: spin 0.8s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
   </style>
 </head>
@@ -1055,13 +1100,13 @@ function draw(region) {
   const sel = gCountries.selectAll('path').data(features, d => d.id);
   sel.enter().append('path').merge(sel)
     .attr('d', path)
-    .attr('fill', d => coveredById[d.id] ? '#0F6E56' : '#E8E3DA')
+    .attr('fill', d => coveredById[d.id] ? '#096e4a' : '#E8E3DA')
     .attr('stroke', '#FAFBFC')
     .attr('stroke-width', 0.5)
     .style('cursor', d => coveredById[d.id] ? 'pointer' : 'default')
     .on('mouseover', function(e, d) {
       if (!coveredById[d.id]) return;
-      d3.select(this).attr('fill', '#04342C');
+      d3.select(this).attr('fill', '#054930'); // 70% darkened green for hover
       tip.textContent = coveredById[d.id].name;
       tip.classList.add('visible');
     })
@@ -1072,7 +1117,7 @@ function draw(region) {
     })
     .on('mouseout', function(e, d) {
       if (!coveredById[d.id]) return;
-      d3.select(this).attr('fill', '#0F6E56');
+      d3.select(this).attr('fill', '#096e4a');
       tip.classList.remove('visible');
     })
     .on('click', function(e, d) {
@@ -1088,9 +1133,9 @@ function draw(region) {
       .attr('transform', `translate(${p[0]},${p[1]})`)
       .style('cursor', 'pointer')
       .on('click', () => window.location.href = `country.html?id=${r.n.toLowerCase()}`);
-    grp.append('circle').attr('r', 7).attr('fill', '#6B2A89').attr('stroke', 'white').attr('stroke-width', 2);
-    grp.append('circle').attr('r', 11).attr('fill', 'none').attr('stroke', '#6B2A89').attr('stroke-width', 1.5).attr('opacity', 0.5);
-    grp.append('text').attr('y', -15).attr('text-anchor', 'middle').attr('font-size', 12).attr('font-weight', 500).attr('fill', '#6B2A89').text(r.n);
+    grp.append('circle').attr('r', 7).attr('fill', '#5b2080').attr('stroke', 'white').attr('stroke-width', 2);
+    grp.append('circle').attr('r', 11).attr('fill', 'none').attr('stroke', '#5b2080').attr('stroke-width', 1.5).attr('opacity', 0.5);
+    grp.append('text').attr('y', -15).attr('text-anchor', 'middle').attr('font-size', 12).attr('font-weight', 700).attr('fill', '#5b2080').text(r.n);
   });
 }
 
@@ -1154,7 +1199,7 @@ function initMap(data) {
 .rs-tip {
   position: absolute;
   pointer-events: none;
-  background: var(--rouse-teal-deep);
+  background: var(--rouse-purple);
   color: white;
   font-size: 11px;
   padding: 5px 9px;
@@ -1259,7 +1304,7 @@ Verify `assets/data/requirements.json` exists and contains valid data. Open it, 
 
 Single stylesheet containing:
 - CSS variables for the colour palette (section 6.1)
-- Roboto font import
+- Carlito font import (with Calibri / Aptos / Tahoma fallback chain per §6.3)
 - Base styles (body, h1-h3, p, a)
 - Header / nav styles
 - Hero section
@@ -1303,7 +1348,7 @@ Open `index.html` directly in a browser. Test:
 2. Click a covered country — navigates to `country.html?id=xxx`
 3. Country page renders the right country's data
 4. All six table columns populated for every country
-5. Required pills colour correctly (green / magenta / grey)
+5. Required pills colour correctly (green / red / grey)
 6. Information panel renders
 7. Country-specific CTA reads "Request the [Country] fee schedule"
 8. Prev/next navigation works
