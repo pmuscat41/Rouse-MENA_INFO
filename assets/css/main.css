@@ -747,6 +747,65 @@ html, body {
 }
 
 /* ==========================================================================
+   404 page
+   ========================================================================== */
+.rs-404 {
+  max-width: 640px;
+  margin: 64px auto;
+  padding: 0 var(--container-padding);
+  text-align: center;
+}
+.rs-404-code {
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--rouse-petrol);
+  line-height: 1;
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+.rs-404-h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--rouse-grey-dark);
+  margin: 0 0 16px;
+}
+.rs-404-sub {
+  font-size: 15px;
+  color: var(--rouse-grey-mid);
+  line-height: 1.6;
+  margin: 0 auto 32px;
+  max-width: 520px;
+}
+.rs-404-actions { margin-bottom: 48px; }
+.rs-404-primary {
+  display: inline-block;
+  background: var(--rouse-green);
+  color: #fff !important;
+}
+.rs-404-primary:hover { background: var(--green-deep); text-decoration: none; }
+.rs-404-links {
+  text-align: left;
+  background: var(--neutral-card);
+  border: 1px solid var(--neutral-border);
+  border-radius: 10px;
+  padding: 22px 26px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.rs-404-links .rs-eyebrow { margin-bottom: 12px; }
+.rs-404-links ul { padding: 0; }
+.rs-404-links li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--neutral-border);
+}
+.rs-404-links li:last-child { border-bottom: 0; }
+.rs-404-links a {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--rouse-petrol);
+}
+
+/* ==========================================================================
    Register / redirect page
    ========================================================================== */
 .rs-redirect {
